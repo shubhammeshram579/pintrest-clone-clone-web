@@ -20,7 +20,7 @@ app.use(cors());
 
 // connect to frontend url
 app.use(cors({
-    origin:process.env.CORS_ORIGIN_FRONTEND_URL, // Replace with your frontend URL
+    origin:"https://pintrest-clone-frontend.vercel.app", // Replace with your frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
   }));
