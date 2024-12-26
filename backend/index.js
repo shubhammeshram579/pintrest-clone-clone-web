@@ -19,15 +19,25 @@ dotenv.config()
 
 
 // // set up of funcanality
-const server = http.createServer(app);
-const io = new Server(server, {
-    cors: {
-      origin:"https://pintrest-clone-frontend.vercel.app", // Replace with your frontend URL
-      methods: ["GET", "POST","PUT"],
-    },
-  });
+// const server = http.createServer(app);
+// const io = new Server(server, {
+//     cors: {
+//       origin:"https://pintrest-clone-frontend.vercel.app", // Replace with your frontend URL
+//       methods: ["GET", "POST","PUT"],
+//     },
+// });
 
-  console.log(io)
+const server = http.createServer();
+const io = new Server(server);
+
+const requestHandler = (req, res) => {
+    res.writeHead(200).end('Hello');
+};
+
+server.on('request', requestHandler); // Add the listener
+
+// ... later, to remove the listener:
+server.off('request', requestHandler);
 
 
 
