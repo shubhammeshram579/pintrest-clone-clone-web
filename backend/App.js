@@ -43,6 +43,7 @@ import comment from "./routers/Comment.route.js"
 import notification from "./routers/Notification.route.js"
 import addChatMessage from "./routers/ChatMessage.route.js"
 import SaveUser from "./routers/SaveUsers.route.js"
+import home from "./routers/Home.js"
 
 
 // import { access } from "fs";
@@ -50,6 +51,7 @@ import SaveUser from "./routers/SaveUsers.route.js"
 
 
 // api router declaration 
+app.use("/" , home)
 app.use("/api" , userrouter)
 app.use("/api", userPost)
 app.use("/api", comment)
