@@ -22,7 +22,8 @@ const app = express();
 app.use(cors({
     origin:"https://pintrest-clone-frontend.vercel.app", // Replace with your frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
   }));
 
 
