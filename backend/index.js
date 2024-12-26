@@ -27,7 +27,7 @@ const io = new Server(server, {
     },
   });
 
-  // console.log(process.env.CORS_ORIGIN_FRONTEND_URL)
+  console.log(io)
 
 
 
