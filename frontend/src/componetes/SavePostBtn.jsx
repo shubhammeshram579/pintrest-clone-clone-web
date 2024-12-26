@@ -17,7 +17,7 @@ const SavePostButton = ({ userId, postId }) => {
   // fatch post api for savepost current user
   const handleSavePost = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/api/posts/savePost",{userId, postId},{
+      const response = await axios.post("https://pintrest-clone-api.vercel.app/api/posts/savePost",{userId, postId},{
         headers:{
             "Authorization":`Bearer ${accessToken}`
         }

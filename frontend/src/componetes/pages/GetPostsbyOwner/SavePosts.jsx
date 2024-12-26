@@ -23,7 +23,7 @@ const SavePosts = () => {
   useEffect(()=>{
     const fatchSavePost = async () => {
       try {
-        const userSavePost = await axios.get(`http://localhost:3000/api/users/savePosts/${userId}`,{
+        const userSavePost = await axios.get(`https://pintrest-clone-api.vercel.app/api/users/savePosts/${userId}`,{
           headers: {
             "Authorization":`Bearer ${accessToken}`
           }

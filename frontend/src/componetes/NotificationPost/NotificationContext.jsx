@@ -22,12 +22,12 @@ export const NotificationProvider = ({ children }) => {
 
   // fatch new post notification api and used socked io.
   useEffect(() => {
-    const socket = io("http://localhost:3000");
+    const socket = io("https://pintrest-clone-api.vercel.app");
     // console.log(socket)
 
     const fetchNotifications = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/Notification', {
+        const response = await axios.get('https://pintrest-clone-api.vercel.app/api/Notification', {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
@@ -66,13 +66,13 @@ export const NotificationProvider = ({ children }) => {
     setNotificationCount((prevCount) => prevCount - 1);
 
     try {
-      await axios.delete(`http://localhost:3000/api/Notification/${notificationId}`, {
+      await axios.delete(`https://pintrest-clone-api.vercel.app/api/Notification/${notificationId}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
       });
 
-      const socket = io("http://localhost:3000");
+      const socket = io("https://pintrest-clone-api.vercel.app");
       socket.emit('deleteNotification', notificationId);
     } catch (error) {
       console.log('Failed to delete notification', error);

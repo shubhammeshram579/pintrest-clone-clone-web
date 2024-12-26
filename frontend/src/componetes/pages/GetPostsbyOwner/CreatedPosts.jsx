@@ -25,7 +25,7 @@ const CreatedPosts = () => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/posts/getPost/${userId}`,
+          `https://pintrest-clone-api.vercel.app/api/posts/getPost/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

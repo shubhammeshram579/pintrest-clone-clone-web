@@ -21,7 +21,7 @@ const EditPost = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/posts/getPostByID/${postId}`,{
+        const response = await axios.get(`https://pintrest-clone-api.vercel.app/api/posts/getPostByID/${postId}`,{
           headers: {
             "Authorization": `Bearer ${accessToken}`
           }
@@ -54,7 +54,7 @@ const EditPost = () => {
     formData.append("status",data.status);
 
     try {
-      const res = await axios.patch(`http://localhost:3000/api/posts/EditPost/${postId}`, formData ,{
+      const res = await axios.patch(`https://pintrest-clone-api.vercel.app/api/posts/EditPost/${postId}`, formData ,{
         headers:{
           "Authorization":`Bearer ${accessToken}`
         }

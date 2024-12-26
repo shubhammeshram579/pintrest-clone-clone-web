@@ -41,7 +41,7 @@ const UpdateUser = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const respornse = await axios.get("http://localhost:3000/api/users/current-user", {
+        const respornse = await axios.get("https://pintrest-clone-api.vercel.app/api/users/current-user", {
           headers: {
             "Authorization": `Bearer ${accessToken}`,
           },

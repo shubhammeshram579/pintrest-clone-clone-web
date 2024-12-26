@@ -10,7 +10,7 @@ import axios from 'axios';
 
 import io from "socket.io-client";
 
-const socket = io("http://localhost:3000");
+const socket = io("https://pintrest-clone-api.vercel.app");
 
 
 
@@ -39,7 +39,7 @@ const  PostForm = ({post}) => {
 
     // fatch addpost api
 try {
-      const response = await axios.post("http://localhost:3000/api/posts/addpost",formData,{
+      const response = await axios.post("https://pintrest-clone-api.vercel.app/api/posts/addpost",formData,{
         headers:{"Authorization":`Bearer ${token}`}
       })
       console.log(response.data)

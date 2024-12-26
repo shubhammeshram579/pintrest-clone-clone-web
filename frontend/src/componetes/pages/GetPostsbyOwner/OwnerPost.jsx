@@ -35,7 +35,7 @@ const OwnerPost = () => {
     const fetchCurrentUser = async () => {
       try {
         const userData = await axios.get(
-          "http://localhost:3000/api/users/current-user",
+          "https://pintrest-clone-api.vercel.app/api/users/current-user",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

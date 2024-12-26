@@ -12,7 +12,7 @@ import io from "socket.io-client";
 import "..//..//../App.css"
 import "..//..//../Responsive.css"
 
-const socket = io("http://localhost:3000");
+const socket = io("https://pintrest-clone-api.vercel.app");
 
 const HomeSinglePost = () => {
   const { postId } = useParams();
@@ -56,7 +56,7 @@ const HomeSinglePost = () => {
     const fatchgetpost = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/posts/getPostByID/${postId}`,
+          `https://pintrest-clone-api.vercel.app/api/posts/getPostByID/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -82,7 +82,7 @@ const HomeSinglePost = () => {
     const fatchCurrentUser = async () => {
       try {
         const currentUser = await axios.get(
-          "http://localhost:3000/api/users/current-user",
+          "https://pintrest-clone-api.vercel.app/api/users/current-user",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -109,7 +109,7 @@ const HomeSinglePost = () => {
     const fetchComments = async () => {
       try {
         const resComment = await axios.get(
-          `http://localhost:3000/api/comments/getcomment/${postId}`,
+          `https://pintrest-clone-api.vercel.app/api/comments/getcomment/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -150,7 +150,7 @@ const HomeSinglePost = () => {
       // setComment((prevComment) => [...prevComment, data]);
 
       const addcomment = await axios.post(
-        `http://localhost:3000/api/comments/addcomment/${postId}`,
+        `https://pintrest-clone-api.vercel.app/api/comments/addcomment/${postId}`,
         newComment,
         {
           headers: {

@@ -16,7 +16,7 @@ function Register() {
     const onSubmit = async (data) => {
       
         try {
-          const user = await axios.post('http://localhost:3000/api/users/register', data);
+          const user = await axios.post('https://pintrest-clone-api.vercel.app/api/users/register', data);
           alert(user.data.message);
           console.log(user)        
 

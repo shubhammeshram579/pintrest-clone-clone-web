@@ -15,7 +15,7 @@ import { format, formatDistanceToNow, isToday } from "date-fns";
 // Socket.IO is an event-driven library for real-time web applications. 
 import io from "socket.io-client";
 
-const socket = io("http://localhost:3000");
+const socket = io("https://pintrest-clone-api.vercel.app");
 
 
 const ChatMessageBox = () => {
@@ -55,7 +55,7 @@ const ChatMessageBox = () => {
     const fatchcurrentUser = async () => {
       try {
         const getcurrentUser = await axios.get(
-          `http://localhost:3000/api/users/current-user`,
+          `https://pintrest-clone-api.vercel.app/api/users/current-user`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -84,7 +84,7 @@ const ChatMessageBox = () => {
     const fatchChats = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/chatMessage/${from}/${to}`,
+          `https://pintrest-clone-api.vercel.app/api/chatMessage/${from}/${to}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -134,7 +134,7 @@ const ChatMessageBox = () => {
 
       // send message Api
       await axios.post(
-        `http://localhost:3000/api/chatMessage/send`,
+        `https://pintrest-clone-api.vercel.app/api/chatMessage/send`,
         newMessage,
         {
           headers: {
@@ -174,7 +174,7 @@ const ChatMessageBox = () => {
      // Mark the message as read
      const readchats = async () =>{
      try {
-      await axios.put(`http://localhost:3000/api/chatMessage/readchat/${from}/${to}`,{
+      await axios.put(`https://pintrest-clone-api.vercel.app/api/chatMessage/readchat/${from}/${to}`,{
       },{
         headers:{
           "Authorization":`Bearer ${accessToken}`

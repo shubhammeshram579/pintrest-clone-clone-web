@@ -164,7 +164,7 @@ const GetPostOtherUser = () => {
   const handleDelete = async () => {
     try {
       await axios.delete(
-        `http://localhost:3000/api/posts/deletePost/${postId}`,
+        `https://pintrest-clone-api.vercel.app/api/posts/deletePost/${postId}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
