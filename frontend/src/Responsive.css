@@ -1,0 +1,785 @@
+
+
+#navbar2{
+    display: none;
+}
+
+/* 
+#CommentCard{
+    background-color: green;
+} */
+
+
+
+#CommentCard::-webkit-scrollbar {
+    display: block;
+    width: 7px;
+    background-color:#fff;
+  }
+
+  #CommentCard::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 50px;
+
+  }
+
+
+  /* logoutbutn */
+
+  #LogoutIcon{
+    display: none;
+  }
+
+
+/* #postCard{
+    background-color:green;
+} */
+@media (max-width:767px) {
+
+
+  /* logoutbutn */
+
+  #LogoutIcon{
+    display: block;
+    padding: 4px 3px;
+    border-radius: 100%;
+  }
+
+  #Logoutbtn{
+    display: none;
+  }
+
+
+  #HomepageFooter{
+    display: none;
+  }
+
+    /* navbar */
+    #navhead{
+        /* background-color:yellow; */
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        /* padding-left: 100px; */
+
+    }
+
+    #navhead #navitem{
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        gap: 100px;
+        display: none;
+    }
+
+    #navhead #topnavitem{
+        /* background-color: yellow; */
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        margin:3vw;
+
+    }
+
+    #navbar2{
+        display: block;
+        display: flex;
+        align-items: center;
+    }
+
+    #navuser{
+        display: none;
+    }
+
+    #navList{
+        /* background-color: red; */
+        margin-left: 5vw;
+    }
+
+    #Logop{
+        /* background-color: green; */
+        /* margin-left: -350px; */
+        width: 100px;
+        margin: 10vw;
+        margin-left: -5vw;
+    }
+
+
+
+    /* homepost style */
+    #HomePostCard{
+      min-height: 80vh;
+
+    }
+    #homePost{
+        padding: 1vh 5vw;
+        /* padding-bottom: 150px; */
+        /* background-color: red; */
+    }
+
+
+
+    #postCard{
+        height: 45vh;
+        width: 42vw;
+        margin-bottom: 2px;
+        /* background-color: red; */
+
+    }
+
+    #postCard img{
+        height: 40vh;
+        width: 42vw;
+
+    }
+
+    #postCard #text1{
+        font-size: 15px;
+        text-align: start;
+        margin-top: -1px;
+        padding-top: 5px;
+        /* background-color: red; */
+        padding-left: 10px;
+    }
+
+    #SavebtnId{
+        background-color: transparent;
+        /* background-color: green; */
+        padding-top: 1vw;
+        /* padding-left: 4vw; */
+        margin-left: 22vw;
+        margin-top: -60vw;
+
+    }
+
+    #btnsitems{
+      /* background-color: red; */
+      width: 42vw;
+      /* margin-left: -0.5vw; */
+      padding: 0px 1vw;
+      font-size: 1px;
+      margin-top: -11vw;
+    }
+
+    #btnsitems #webLink{
+      font-size: 3vw;
+      padding: 1vw 2vw;
+    }
+
+
+    #shrePost{
+      margin-left: 4vw;
+    }
+
+    #treedot{
+      font-size: 5vw;
+      padding: 1.4vw;
+    }
+
+
+    #PostbyId{
+        /* background-color: red; */
+        min-height: 90vh;
+    }
+
+    #ArrowBtn{
+        /* background-color: yellow; */
+        position: absolute;
+        z-index: 999;
+        margin-left: -50px;
+        margin-top: 50px;
+        color: red;
+    }
+
+    #ArrowBtn:hover{
+        background-color: yellow;
+        border-radius: 100%;
+        padding: 0px 5px;
+    }
+
+
+    #ProfileText{
+      font-size: 3vw;
+      /* background-color: rebeccapurple; */
+    }
+
+
+
+
+    /* ownerpost statyle edit and delete butten */
+
+    #topArrowBtnAndEditBtn{
+        /* background-color: green; */
+        width: 95vw;
+        padding-bottom:40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #EditBtn button{
+        /* background-color: red; */
+        font-size:14px;
+        padding: 10px 10px;
+
+    }
+
+    #PostCard{
+        /* background-color: green; */
+        height: 62vh;
+        width: 95vw;
+        padding-right: 5px;
+    }
+
+    #PostCard img{
+        height: 60vh;
+        width: 43vw;
+
+        /* margin-top: 37px; */
+    }
+
+    #postItems{
+        width: 50vw;
+        height: 60vh;
+        /* background-color: yellow; */
+    }
+
+    /* #postItems #shareItem{
+        background-color: red;
+        
+    } */
+
+    #Title{
+        /* background-color: aqua; */
+        height: 15vh;
+    }
+
+    #Title h1{
+        /* color: brown; */
+        font-size: 3.5vw;
+        text-transform: capitalize;
+        margin-top: -0px;
+        padding-top: 25px;
+    }
+
+
+
+
+
+
+    /* footer style */
+    #footer{
+        display: none;
+    }
+
+    #footeritem{
+        /* background-color: rebeccapurple; */
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+
+
+    #footeritem ul li{
+        text-size-adjust: 10px;
+        margin-top: -10px;
+    }
+
+
+
+    /* own post page  */
+    #createdPost{
+        /* background-color: red; */
+        padding: 10px 2vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+
+    }
+
+    #ownpostcard{
+        /* background-color: green; */
+        height: 40vh;
+        width: 42vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+
+    #ownpostcard img{
+        height: 32vh;
+        width: 40vw;
+        object-fit: cover;
+
+    }
+
+
+    /* addpost  */
+
+    #AddPostCard{
+      height: 80vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* background-color: red; */
+    }
+    #AddpostForm{
+        /* background-color: red; */
+        height: 50vh;
+        width: 85vw;
+    }
+
+
+
+    /* notificarion page */
+    #Notification{
+        left: 37%;
+        width: 60vw;
+        height: 73vh;
+
+    }
+
+    #Noticationcard{
+        margin-top: 20px;
+    }
+
+    #notificationCard2{
+      height:50vh;
+      /* background-color: green; */
+    }
+
+    #notificationCard3{
+      height: 23vw;
+    }
+
+
+    #masseagebox{
+        /* background-color: red; */
+        width: 62vw;
+        height: 75vh;
+        margin-right: 40vw;
+    }
+
+    #masseageboxcard{
+        /* background-color: green; */
+        width: 56vw;
+        height: 68vh;
+        border-radius:10px;
+        
+    }
+
+    #masseagebox #Sharepage{
+        /* background-color: rebeccapurple; */
+        width: 50vw;
+        margin-top: -20px;
+        font-size: 3vw;
+    }
+
+    #masseagebox #massageItem{
+        /* background-color: yellow; */
+        width: 53vw;
+        height: auto;
+        font-size: 3vw;
+    }
+
+    #masseagebox #massageItem2{
+      /* background-color: red; */
+      margin-top: -2vh;
+      height: 25vh;
+    }
+
+    #NotificationChatitem{
+      width: 37vw;
+
+    }
+
+    #NotificationChatitem h1{
+      /* background-color: green; */
+      font-size: 3vw;
+    }
+
+    #masseagebox #SearchUser{
+        width: 46vw;
+        /* background-color: aqua; */
+    }
+
+
+    /* userSelect page */
+    #SendMassagepage{
+        /* background-color: red; */
+        width: 62vw;
+        height: 76vh;
+        margin-right: 220px;
+    }
+
+    #SendMassagepageItem{
+        width: 55vw;
+        /* background-color: green; */
+
+    }
+
+
+    #SendMassagepageItem #SearchUser{
+        width: 40vw;
+
+    }
+
+    #sendmessageCard{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: rebeccapurple; */
+        margin-top: -12vh;
+        width: 50vw;
+    }
+
+    #SendMessagesInput{
+        height: 7vh;
+        width: 30vw;
+    }
+
+
+
+
+    /* user chatbox */
+    #chatBox{
+        /* background-color: red; */
+        width: 62vw;
+        height: 76vh;
+        margin-right: 220px;
+
+    }
+
+    #chatMessagebox{
+        /* background-color: green; */
+        font-size: 2.3vw;
+        /* overflow-y: auto; */
+        height: 54vh;
+    }
+
+    #chatFoter{
+        /* background-color: blue; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2px;
+        width: 60vw;
+
+    }
+
+
+    #SendChatMessage{
+        height: 6vh;
+        width: 35vw;
+    }
+
+
+    #chatMessagebox::-webkit-scrollbar {
+        display: block;
+        width: 7px;
+        background-color:#fff;
+      }
+  
+      #chatMessagebox::-webkit-scrollbar-thumb {
+        background-color: gray;
+        border-radius: 50px;
+  
+      }
+
+
+
+
+
+      /* homepages style */
+      /* page2 */
+
+      #hpHeading{
+        /* background-color: green; */
+        padding-bottom: 50px;
+        /* position: relative;
+        z-index: 99; */
+      }
+
+      #hpage2{
+        min-height: 120vh;
+        width: 100%;
+        /* background-color: red; */
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        flex-direction:column;
+        /* gap: 200px; */
+        /* padding-top: 130px; */
+        position: relative;
+        z-index: 99;
+      }
+
+      #hpage2 #hpagecard{
+        /* background-color: green; */
+       width: 100%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       margin-top: 50vh;
+        
+      }
+
+      #hpagecard #img1{
+        height: 32vh;
+        width: 37vw;
+        /* margin-left: 2px; */
+        /* margin-top: 150px; */
+        /* background-color: green; */
+      }
+
+
+      #hpagecard #img2{
+        height: 50vh;
+        width: 70vw;
+        margin-left: -15vw;
+        /* margin-top: 300px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
+
+      #Dinertext{
+        /* margin-top: vh; */
+        margin-left: -10vw;
+        margin-top: -17vh;
+        font-size: 2.5vh;
+        padding: 10px 20px;
+      }
+
+      #hpagecard2{
+        /* background-color: blue; */
+        position: relative;
+        z-index: 99;
+        width: 90vw;
+        margin-left: -10vw;
+        padding-bottom: 40px;
+      }
+
+      #hpagecard2 h1{
+        font-size:5vh;
+      }
+
+      #hpagecard2 p{
+        font-size: 2vh;
+
+      }
+
+
+      /* homepage3 style */
+      #hpage3{
+        min-height: 150vh;
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+        position: relative;
+        z-index: 99;
+
+      }
+
+      #hpage3 #imgCard{
+        /* background-color: green; */
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1vw;
+        /* padding-top: 10px; */
+      }
+
+      #hpage3 #imgCard h1{
+        height: 28vh;
+        width: 37vw;
+        font-size: 3vh;
+
+      }
+
+
+      #hpage3 #imgCard #bgimg1{
+        height: 70vw;
+        width: 50vw;
+        margin-left: 13vw;
+      }
+
+
+
+      #hpage3 #imgCard #bgimg2{
+        height: 30vw;
+        width: 35vw;
+        font-size: 2vh;
+      }
+
+
+      #hpage3 #hp3text{
+        font-size: 6vw;
+        padding-top: 20px;
+      }
+
+      #hpage3 #hp3text2{
+        font-size: 3vw;
+
+      }
+
+      #hpage3 button{
+        margin-bottom: 20px;
+        /* background-color: rebeccapurple; */
+      }
+      
+
+      /* homepage 4 style */
+
+      #hpage4{
+        min-height: 110vh;
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      #hp4card{
+        width: 100%;
+        /* background-color: green; */
+      }
+
+      #hpage4 #hp4img1{
+        height: 100vh;
+        width: 100%;
+        object-fit: cover;
+      }
+
+
+      #hpage4 #hp4img2{
+        height: 47vh;
+        width: 40vw;
+        /* position: absolute; */
+      }
+
+      /* #hp4card2{
+        height: 50vh;
+
+        background-color: rebeccapurple;
+      }  */
+
+      #hp4card2 h1{
+        font-size: 4vh;
+        width: 100%;
+        padding: 5vw 10vw;
+      }
+
+      #hp4card2 p{
+        font-size: 4vw;
+        padding: 0vw 10vw;
+      }
+
+      #hp4card2 button{
+        margin-bottom: 10px;
+      }
+
+
+
+      /* homepage5 styling */
+      #hpage5{
+        /* background-color: red; */
+        min-height: 120vh;
+        
+      }
+
+      #hpage5 #hp5img{
+        /* background-color: red; */
+        height: 120vh;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      #hpage5Card{
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        flex-direction: column;
+        padding: 20px 0px;
+
+      }
+
+
+      #hp5text{
+        width: 90vw;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 100px;
+
+      }
+
+      #hp5text h1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4vh;
+      }
+
+      #hp5text #Ideatext{
+        padding-bottom: 20px;
+      }
+
+      #bghpage5Card{
+        min-height: 120vh;
+        /* background-color: red; */
+      }
+    
+
+      #registerPage{
+        width: 80vw;
+        margin-top: -20vw;
+      }
+
+      #SignInpagetext{
+        width: 80vw;
+        padding: 5vw 5vw;
+      }
+
+
+      /* home page 1 */
+      #hpage1{
+        /* background-color: red; */
+        min-height: 95vh;
+        padding-top: 6vh;
+      }
+    
+      #hpage1 #hp1img2{
+        display: none;
+      }
+
+      #hpage1 #p1imgs1{
+        height: 25vh;
+      }
+
+      #hpage1 #p1imgs2{
+        height: 15vh;
+
+      }
+
+
+      .flickity-page-dots{
+        /* background-color: red; */
+        padding-bottom: 40px;
+        
+
+      }
+}
+
