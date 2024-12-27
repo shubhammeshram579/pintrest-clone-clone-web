@@ -1,5 +1,5 @@
 import dotenv from "dotenv"
-import {app} from "./App.js"
+import app from "./App.js"
 import {ChatMessage} from "./models/ChatMessage.model.js"
 import { User } from "./models/User.model.js"
 import connectDB from "../backend/db/IndexDB.js"
@@ -9,6 +9,8 @@ import connectDB from "../backend/db/IndexDB.js"
 import http from "http"
 import { Server } from 'socket.io';
 
+
+app.use(cors());
 dotenv.config()
 const onlineUsers = {};
 
@@ -23,7 +25,6 @@ const io = new Server(httpServer, {
     cors: {
       origin:"*", // Replace with your frontend URL
       methods: ["GET", "POST","PUT"],
-      credentials: true,
     },
 });
 

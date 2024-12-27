@@ -18,29 +18,29 @@ dotenv.config()
 
 
 // Basic CORS setup
-// app.use(cors());
+app.use(cors());
 
 // connect to frontend url
-app.use(cors({
-    origin:"https://pintrest-clone-frontend.vercel.app", // Replace with your frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization'],
-  }));
+// app.use(cors({
+//     origin:"-", // Replace with your frontend URL
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     credentials: true,
+//     allowedHeaders: ['Content-Type', 'Authorization'],
+//   }));
 
 
-  app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    res.setHeader("Access-Control-Allow-Credentials", "true");
+//   app.use((req, res, next) => {
+//     res.setHeader("Access-Control-Allow-Origin", "*");
+//     res.setHeader("Access-Control-Allow-Methods", "GET, POST");
+//     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+//     res.setHeader("Access-Control-Allow-Credentials", "true");
 
-    if (req.method === "OPTIONS") {
-        return res.sendStatus(200);
-    }
+//     if (req.method === "OPTIONS") {
+//         return res.sendStatus(200);
+//     }
 
-    next();
-});
+//     next();
+// });
 
 
 
@@ -65,8 +65,6 @@ import SaveUser from "./routers/SaveUsers.route.js"
 import home from "./routers/Home.js"
 
 
-// import { access } from "fs";
-
 
 
 // api router declaration 
@@ -80,10 +78,6 @@ app.use("/api", SaveUser)
 
 
 
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-export  {app}
+export default app
 
 
