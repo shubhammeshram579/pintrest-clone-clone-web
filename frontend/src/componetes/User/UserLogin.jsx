@@ -28,7 +28,7 @@ function UserLogin() {
     try {
       const session = await axios.post(
         "https://pintrest-clone-api.vercel.app/api/users/login",
-        data
+        data,{headers:{Authorization:`Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZiZmFjZGZmZDUzMjRjM2FhYTlkZWUiLCJlbWFpbCI6InNodWJoYW0zMjFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJzaHViaGFtMzIxIiwiZnVsbG5hbWUiOiJzaHViaGFtIG1lc2hyYW0iLCJpYXQiOjE3MzUyMTYzOTUsImV4cCI6MTczNTMwMjc5NX0.uN1UwHsUBwPpHOntTFhYQvS-NYRL8rtpchqb6sBQupo"}`}}
       );
 
       console.log(session.data)
