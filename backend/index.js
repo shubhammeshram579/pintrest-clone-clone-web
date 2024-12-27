@@ -21,13 +21,13 @@ const onlineUsers = {};
 
 
 // // set up of funcanality
-// const httpServer = http.createServer(app);
-// const io = new Server(httpServer, {
-//     cors: {
-//       origin:"*", // Replace with your frontend URL
-//       methods: ["GET", "POST","PUT"],
-//     },
-// });
+const httpServer = http.createServer(app);
+const io = new Server(httpServer, {
+    cors: {
+      origin:"*", // Replace with your frontend URL
+      methods: ["GET", "POST","PUT"],
+    },
+});
 
 
 // mongodb databases connection
@@ -232,7 +232,7 @@ app.listen(3000, () => {
     console.log("Server running on port 3000");
 });
 
-// export default io
+export default io
 
 
 
