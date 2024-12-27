@@ -21,85 +21,85 @@ const onlineUsers = {};
 
 
 // // set up of funcanality
-const httpServer = http.createServer(app);
-const io = new Server(httpServer, {
-    cors: {
-      origin:"*", // Replace with your frontend URL
-      methods: ["GET", "POST","PUT"],
-    },
-});
+// const httpServer = http.createServer(app);
+// const io = new Server(httpServer, {
+//     cors: {
+//       origin:"*", // Replace with your frontend URL
+//       methods: ["GET", "POST","PUT"],
+//     },
+// });
 
 
 // mongodb databases connection
 connectDB()
 
 
-io.on("connection", (socket) => {
-  console.log("New client connected:", socket.id);
+// io.on("connection", (socket) => {
+//   console.log("New client connected:", socket.id);
 
-  onlineUsers[socket.id] = true; // Add user to online list
+//   onlineUsers[socket.id] = true; // Add user to online list
 
-  socket.on("sendMessage", async (data) => {
-      const { from, to, message } = data;
-      try {
-          const fromUser = await User.findById(from).select('-password');
-          if (!fromUser) {
-              console.error('User not found');
-              return;
-          }
+//   socket.on("sendMessage", async (data) => {
+//       const { from, to, message } = data;
+//       try {
+//           const fromUser = await User.findById(from).select('-password');
+//           if (!fromUser) {
+//               console.error('User not found');
+//               return;
+//           }
 
-          io.emit('receiveMessage', {
-              from: fromUser,
-              to,
-              message,
-              createdAt: new Date(),
-              isRead: false
-          });
+//           io.emit('receiveMessage', {
+//               from: fromUser,
+//               to,
+//               message,
+//               createdAt: new Date(),
+//               isRead: false
+//           });
 
-          // Optionally save the message to the database:
-          const newMessage = new ChatMessage({from: from, to: to, message: message});
-          await newMessage.save();
+//           // Optionally save the message to the database:
+//           const newMessage = new ChatMessage({from: from, to: to, message: message});
+//           await newMessage.save();
 
-      } catch (error) {
-          console.error('Error sending message:', error);
-      }
-  });
+//       } catch (error) {
+//           console.error('Error sending message:', error);
+//       }
+//   });
 
-  socket.on("sendComment", async (data) => {
-      const { content, owner } = data;
-      try {
-          const user = await User.findById(owner);
-          if (!user) {
-              console.error('User not found');
-              return;
-          }
+//   socket.on("sendComment", async (data) => {
+//       const { content, owner } = data;
+//       try {
+//           const user = await User.findById(owner);
+//           if (!user) {
+//               console.error('User not found');
+//               return;
+//           }
 
-          io.emit('recivedComment', {
-              content: content,
-              owner: user,
-              createdAt: new Date(),
-          });
-      } catch (error) {
-          console.error('Error sending comment:', error);
-      }
-  });
+//           io.emit('recivedComment', {
+//               content: content,
+//               owner: user,
+//               createdAt: new Date(),
+//           });
+//       } catch (error) {
+//           console.error('Error sending comment:', error);
+//       }
+//   });
 
-  socket.on("deleteNotification", async (notificationId) => {
-      try {
-          // Replace with your actual delete logic
-          // await deleteNotificationById(notificationId); // Example function
-          console.log(`Notification with ID ${notificationId} deleted (simulated)`);
-          io.emit('notificationDeleted', notificationId);
-      } catch (error) {
-          console.error('Error deleting notification:', error);
-      }
-  });
+//   socket.on("deleteNotification", async (notificationId) => {
+//       try {
+//           // Replace with your actual delete logic
+//           // await deleteNotificationById(notificationId); // Example function
+//           console.log(`Notification with ID ${notificationId} deleted (simulated)`);
+//           io.emit('notificationDeleted', notificationId);
+//       } catch (error) {
+//           console.error('Error deleting notification:', error);
+//       }
+//   });
 
-  socket.on("disconnect", () => {
-      console.log("Client disconnected:", socket.id);
-      delete onlineUsers[socket.id]; // Remove user from online list
-  });
-});
+//   socket.on("disconnect", () => {
+//       console.log("Client disconnected:", socket.id);
+//       delete onlineUsers[socket.id]; // Remove user from online list
+//   });
+// });
 
 
 
@@ -228,7 +228,7 @@ io.on("connection", (socket) => {
 // const PORT = process.env.PORT || 5000;
 // httpServer.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-httpServer.listen(3000, () => {
+app.listen(3000, () => {
     console.log("Server running on port 3000");
 });
 
