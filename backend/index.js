@@ -11,7 +11,7 @@ import { Server } from 'socket.io';
 
 
 // app.use(cors());
-// dotenv.config()
+dotenv.config()
 const onlineUsers = {};
 
 
@@ -23,7 +23,7 @@ const onlineUsers = {};
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
     cors: {
-      origin:"*", // Replace with your frontend URL
+      origin:"https://pintrest-clone-frontend.vercel.app", // Replace with your frontend URL
       methods: ["GET", "POST","PUT"],
     },
 });
@@ -224,7 +224,7 @@ io.on('connection', (socket) => {
 // // }
 
 const PORT = process.env.PORT || 5000;
-httpServer.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+httpServer.listen(3000, () => console.log(`Server socked io running on port 3000`));
 
 
 
