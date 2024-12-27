@@ -8,11 +8,6 @@ import axios from 'axios';
 
 
 
-import io from "socket.io-client";
-
-const socket = io("https://pintrest-clone-api.vercel.app");
-
-
 
 
 const  PostForm = ({post}) => {

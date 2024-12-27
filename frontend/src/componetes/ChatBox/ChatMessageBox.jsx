@@ -15,7 +15,9 @@ import { format, formatDistanceToNow, isToday } from "date-fns";
 // Socket.IO is an event-driven library for real-time web applications. 
 import io from "socket.io-client";
 
-const socket = io("https://pintrest-clone-api.vercel.app");
+// const socket = io("https://pintrest-clone-api.vercel.app");
+
+
 
 
 const ChatMessageBox = () => {
@@ -39,6 +41,13 @@ const ChatMessageBox = () => {
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
   
 
+
+  const socket = io("https://pintrest-clone-api.vercel.app", {
+    withCredentials: true, // Ensure credentials are sent if needed
+    extraHeaders: {
+        "my-custom-header": `${accessToken}`, // Example custom headers if required
+    },
+  });
 
 
   // Animation set time

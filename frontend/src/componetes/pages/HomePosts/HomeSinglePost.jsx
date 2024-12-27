@@ -12,7 +12,7 @@ import io from "socket.io-client";
 import "..//..//../App.css"
 import "..//..//../Responsive.css"
 
-const socket = io("https://pintrest-clone-api.vercel.app");
+// const socket = io("https://pintrest-clone-api.vercel.app");
 
 const HomeSinglePost = () => {
   const { postId } = useParams();
@@ -37,6 +37,16 @@ const HomeSinglePost = () => {
   // download butten and hide butten
   const [visible, setVisible] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+
+
+
+
+  const socket = io("https://pintrest-clone-api.vercel.app", {
+    withCredentials: true, // Ensure credentials are sent if needed
+    extraHeaders: {
+        "my-custom-header": `${accessToken}`, // Example custom headers if required
+    },
+  });
 
 
 

@@ -22,7 +22,12 @@ export const NotificationProvider = ({ children }) => {
 
   // fatch new post notification api and used socked io.
   useEffect(() => {
-    const socket = io("https://pintrest-clone-api.vercel.app");
+    const socket = io("https://pintrest-clone-api.vercel.app", {
+      withCredentials: true, // Ensure credentials are sent if needed
+      extraHeaders: {
+          "my-custom-header": `${accessToken}`, // Example custom headers if required
+      },
+    });
     // console.log(socket)
 
     const fetchNotifications = async () => {
@@ -72,7 +77,12 @@ export const NotificationProvider = ({ children }) => {
         },
       });
 
-      const socket = io("https://pintrest-clone-api.vercel.app");
+      const socket = io("https://pintrest-clone-api.vercel.app", {
+        withCredentials: true, // Ensure credentials are sent if needed
+        extraHeaders: {
+            "my-custom-header": `${accessToken}`, // Example custom headers if required
+        },
+      });
       socket.emit('deleteNotification', notificationId);
     } catch (error) {
       console.log('Failed to delete notification', error);
