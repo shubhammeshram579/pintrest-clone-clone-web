@@ -18,8 +18,8 @@ const onlineUsers = {};
 
 
 // // set up of funcanality
-const server = http.createServer(app);
-const io = new Server(server, {
+const httpServer = http.createServer(app);
+const io = new Server(httpServer, {
     cors: {
       origin:"https://pintrest-clone-frontend.vercel.app", // Replace with your frontend URL
       methods: ["GET", "POST","PUT"],
@@ -217,12 +217,18 @@ io.on("connection", (socket) => {
 
 
 // console.log(server.listeners('connection'));
-if (server instanceof http.Server) {
-    console.log('Server is properly initialized.');
-} else {
-    console.error('Server initialization failed. Check your setup.');
-}
+// if (server instanceof http.Server) {
+//     console.log('Server is properly initialized.');
+// } else {
+//     console.error('Server initialization failed. Check your setup.');
+// }
 
+// const PORT = process.env.PORT || 5000;
+// httpServer.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+httpServer.listen(3000, () => {
+    console.log("Server running on port 3000");
+});
 
 export default io
 
