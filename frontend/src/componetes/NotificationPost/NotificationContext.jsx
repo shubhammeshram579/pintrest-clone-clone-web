@@ -22,7 +22,7 @@ export const NotificationProvider = ({ children }) => {
 
   // fatch new post notification api and used socked io.
   useEffect(() => {
-    const socket = io("https://pintrest-clone-api.vercel.app", {
+    const socket = io("https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app", {
       withCredentials: true, // Ensure credentials are sent if needed
       extraHeaders: {
           "my-custom-header": `${accessToken}`, // Example custom headers if required
@@ -32,7 +32,7 @@ export const NotificationProvider = ({ children }) => {
 
     const fetchNotifications = async () => {
       try {
-        const response = await axios.get('https://pintrest-clone-api.vercel.app/api/Notification', {
+        const response = await axios.get('https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/Notification', {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
@@ -71,13 +71,13 @@ export const NotificationProvider = ({ children }) => {
     setNotificationCount((prevCount) => prevCount - 1);
 
     try {
-      await axios.delete(`https://pintrest-clone-api.vercel.app/api/Notification/${notificationId}`, {
+      await axios.delete(`https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/Notification/${notificationId}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
       });
 
-      const socket = io("https://pintrest-clone-api.vercel.app", {
+      const socket = io("https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app", {
         withCredentials: true, // Ensure credentials are sent if needed
         extraHeaders: {
             "my-custom-header": `${accessToken}`, // Example custom headers if required
