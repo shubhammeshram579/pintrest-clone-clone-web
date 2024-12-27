@@ -224,7 +224,7 @@ io.on('connection', (socket) => {
 // // }
 
 const PORT = process.env.PORT || 5000;
-httpServer.listen(3000, () => console.log(`Server socked io running on port 3000`));
+httpServer.listen(5000, () => console.log(`Server socked io running on port 3000`));
 
 
 
