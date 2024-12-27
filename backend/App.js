@@ -3,6 +3,7 @@ import cors from "cors"
 import cookieParser from "cookie-parser"
 import dotenv from "dotenv";
 import expressSession from "express-session"
+import MongoStore from "connect-mongo"
 
 // set up express to app
 const app = express();
