@@ -23,7 +23,7 @@ const onlineUsers = {};
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
     cors: {
-      origin:"https://pintrest-clone-frontend.vercel.app", // Replace with your frontend URL
+      origin:"https://pintrest-clone-frontend-qk9xugn5y.vercel.app", // Replace with your frontend URL
       methods: ["GET", "POST","PUT"],
     },
 });
