@@ -5,10 +5,10 @@ import {Post} from "../models/Post.model.js"
 import { User } from "../models/User.model.js"
 import {uploadCloudinary} from "../utils/Cloudinary.js"
 import {Notification} from "../models/Notification.js"
-import io from "../index.js"
+// import io from "../index.js"
 
 
-const onlineUsers = {}; 
+// const onlineUsers = {}; 
 
 
 

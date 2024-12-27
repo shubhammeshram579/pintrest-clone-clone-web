@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import expressSession from "express-session"
 import MongoStore from "connect-mongo"
 
+import connectDB from "../backend/db/IndexDB.js"
+connectDB()
 // set up express to app
 const app = express();
 
@@ -12,7 +14,6 @@ const app = express();
 
 // configration env file path
 dotenv.config()
-
 
 
 
