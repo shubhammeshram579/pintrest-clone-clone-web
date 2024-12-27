@@ -1,4 +1,5 @@
 import dotenv from "dotenv"
+import cors from "cors"
 import app from "./App.js"
 import {ChatMessage} from "./models/ChatMessage.model.js"
 import { User } from "./models/User.model.js"
