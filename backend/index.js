@@ -232,9 +232,7 @@ connectDB()
 // const PORT = process.env.PORT || 5000;
 // httpServer.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-app.listen(3000, () => {
-    console.log("Server running on port 3000");
-});
+
 
 export default io
 
