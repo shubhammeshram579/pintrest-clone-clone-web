@@ -216,7 +216,13 @@ io.on("connection", (socket) => {
 
 
 
-console.log(server.listeners('connection'));
+// console.log(server.listeners('connection'));
+if (server instanceof http.Server) {
+    console.log('Server is properly initialized.');
+} else {
+    console.error('Server initialization failed. Check your setup.');
+}
+
 
 export default io
 

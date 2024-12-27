@@ -3,14 +3,16 @@ import cors from "cors"
 import cookieParser from "cookie-parser"
 import dotenv from "dotenv";
 
+// set up express to app
+const app = express();
+
 
 
 // configration env file path
 dotenv.config()
 
 
-// set up express to app
-const app = express();
+
 
 
 
