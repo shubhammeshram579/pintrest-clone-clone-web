@@ -22,12 +22,16 @@ const onlineUsers = {};
 
 // // set up of funcanality
 const httpServer = http.createServer(app);
-const io = new Server(httpServer, {
-    cors: {
-      origin:"*", // Replace with your frontend URL
-      methods: ["GET", "POST","PUT"],
-    },
-});
+// const io = new Server(httpServer, {
+//     cors: {
+//       origin:"*", // Replace with your frontend URL
+//       methods: ["GET", "POST","PUT"],
+//     },
+// });
+
+const io = new Server(httpServer);
+
+
 
 
 // mongodb databases connection
