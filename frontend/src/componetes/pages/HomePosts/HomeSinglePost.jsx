@@ -12,7 +12,7 @@ import io from "socket.io-client";
 import "..//..//../App.css"
 import "..//..//../Responsive.css"
 
-// const socket = io("https://pintrest-clone-api.vercel.app");
+const socket = io("https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app");
 
 const HomeSinglePost = () => {
   const { postId } = useParams();
@@ -41,12 +41,7 @@ const HomeSinglePost = () => {
 
 
 
-  const socket = io("https://pintrest-clone-api.vercel.app", {
-    withCredentials: true, // Ensure credentials are sent if needed
-    extraHeaders: {
-        "my-custom-header": `${accessToken}`, // Example custom headers if required
-    },
-  });
+
 
 
 
@@ -66,7 +61,7 @@ const HomeSinglePost = () => {
     const fatchgetpost = async () => {
       try {
         const response = await axios.get(
-          `https://pintrest-clone-api.vercel.app/api/posts/getPostByID/${postId}`,
+          `https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/posts/getPostByID/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -92,7 +87,7 @@ const HomeSinglePost = () => {
     const fatchCurrentUser = async () => {
       try {
         const currentUser = await axios.get(
-          "https://pintrest-clone-api.vercel.app/api/users/current-user",
+          "https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/users/current-user",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -119,7 +114,7 @@ const HomeSinglePost = () => {
     const fetchComments = async () => {
       try {
         const resComment = await axios.get(
-          `https://pintrest-clone-api.vercel.app/api/comments/getcomment/${postId}`,
+          `https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/comments/getcomment/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -160,7 +155,7 @@ const HomeSinglePost = () => {
       // setComment((prevComment) => [...prevComment, data]);
 
       const addcomment = await axios.post(
-        `https://pintrest-clone-api.vercel.app/api/comments/addcomment/${postId}`,
+        `https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/comments/addcomment/${postId}`,
         newComment,
         {
           headers: {

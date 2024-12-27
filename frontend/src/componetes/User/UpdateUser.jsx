@@ -77,7 +77,7 @@ const UpdateUser = () => {
     try {
 
       // fatch  update user details 
-      const res = await axios.patch("/api/users/updateuser", formData, {
+      const res = await axios.patch("https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/users/updateuser", formData, {
         headers: {
             "Authorization": `Bearer ${accessToken}`,
             "Content-Type": "multipart/form-data",

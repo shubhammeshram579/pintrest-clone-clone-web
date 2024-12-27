@@ -31,7 +31,7 @@ const SearchResults = () => {
   useEffect(() => {
     if (query) {
       axios
-        .get(`https://pintrest-clone-api.vercel.app/api/posts/getAllpost/search`, {
+        .get(`https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/posts/getAllpost/search`, {
           params: { query },
           headers: {
             Authorization: `Bearer ${accessToken}`,

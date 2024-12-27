@@ -15,7 +15,7 @@ import { format, formatDistanceToNow, isToday } from "date-fns";
 // Socket.IO is an event-driven library for real-time web applications. 
 import io from "socket.io-client";
 
-// const socket = io("https://pintrest-clone-api.vercel.app");
+const socket = io("https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app");
 
 
 
@@ -42,12 +42,7 @@ const ChatMessageBox = () => {
   
 
 
-  const socket = io("https://pintrest-clone-api.vercel.app", {
-    withCredentials: true, // Ensure credentials are sent if needed
-    extraHeaders: {
-        "my-custom-header": `${accessToken}`, // Example custom headers if required
-    },
-  });
+    
 
 
   // Animation set time
@@ -64,7 +59,7 @@ const ChatMessageBox = () => {
     const fatchcurrentUser = async () => {
       try {
         const getcurrentUser = await axios.get(
-          `https://pintrest-clone-api.vercel.app/api/users/current-user`,
+          `https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/users/current-user`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -93,7 +88,7 @@ const ChatMessageBox = () => {
     const fatchChats = async () => {
       try {
         const response = await axios.get(
-          `https://pintrest-clone-api.vercel.app/api/chatMessage/${from}/${to}`,
+          `https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/chatMessage/${from}/${to}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -143,7 +138,7 @@ const ChatMessageBox = () => {
 
       // send message Api
       await axios.post(
-        `https://pintrest-clone-api.vercel.app/api/chatMessage/send`,
+        `https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/chatMessage/send`,
         newMessage,
         {
           headers: {
@@ -183,7 +178,7 @@ const ChatMessageBox = () => {
      // Mark the message as read
      const readchats = async () =>{
      try {
-      await axios.put(`https://pintrest-clone-api.vercel.app/api/chatMessage/readchat/${from}/${to}`,{
+      await axios.put(`https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/chatMessage/readchat/${from}/${to}`,{
       },{
         headers:{
           "Authorization":`Bearer ${accessToken}`

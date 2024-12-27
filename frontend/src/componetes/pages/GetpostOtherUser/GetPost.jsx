@@ -55,7 +55,7 @@ const GetPostOtherUser = () => {
     const fatchgetpost = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/posts/getPostByID/${postId}`,
+          `https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/posts/getPostByID/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -81,7 +81,7 @@ const GetPostOtherUser = () => {
     const fatchCurrentUser = async () => {
       try {
         const currentUser = await axios.get(
-          "http://localhost:3000/api/users/current-user",
+          "https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/users/current-user",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -103,7 +103,7 @@ const GetPostOtherUser = () => {
     const fatchgetComment = async () => {
       try {
         const resComment = await axios.get(
-          `http://localhost:3000/api/comments/getcomment/${postId}`,
+          `https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/comments/getcomment/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -133,7 +133,7 @@ const GetPostOtherUser = () => {
   const onSubmit = async (data) => {
     try {
       const addcomment = await axios.post(
-        `http://localhost:3000/api/comments/addcomment/${postId}`,
+        `https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/comments/addcomment/${postId}`,
         data,
         {
           headers: {
@@ -164,7 +164,7 @@ const GetPostOtherUser = () => {
   const handleDelete = async () => {
     try {
       await axios.delete(
-        `https://pintrest-clone-api.vercel.app/api/posts/deletePost/${postId}`,
+        `https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/posts/deletePost/${postId}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
