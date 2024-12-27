@@ -31,6 +31,8 @@ function UserLogin() {
         data
       );
 
+      console.log(session.data)
+
       // localStorage token set
       localStorage.setItem("token", session.data.data.accessToken);
 
@@ -42,6 +44,8 @@ function UserLogin() {
 
       // navigate page
       navigate("/");
+      return response.data
+
     } catch (error) {
       if(error && error.message){
         setError("password is incorrect")

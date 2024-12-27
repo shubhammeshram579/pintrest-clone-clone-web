@@ -43,21 +43,12 @@ app.use(cors({
 });
 
 
-  // app.use((req, res, next) => {
-  //   res.header(
-  //     "Access-Control-Allow-Origin",
-  //     "https://pintrest-clone-frontend.vercel.app"
-  //   );
-  //   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  //   res.header("Access-Control-Allow-Headers", "Content-Type");
-  //   next();
-  // });
-
 
 
 // app.use(cors());
 // some midelware use file confifration
-app.use(express.json({limit: "16kb"}))
+// app.use(express.json({limit: "16kb"}))
+app.use(express.json())
 app.use(express.urlencoded({extended: true, limit:"16kb"}))
 app.use(express.static("public"))
 app.use(cookieParser())
