@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
 import dotenv from "dotenv";
+import expressSession from "express-session"
 
 // set up express to app
 const app = express();
@@ -52,6 +53,26 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true, limit:"16kb"}))
 app.use(express.static("public"))
 app.use(cookieParser())
+
+
+
+
+app.use(
+  expressSession({
+    secret: process.env.ACCESS_TOKEN_SECRET || "yourSecretKey",
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGODB_URL_CLOUD || "mongodb://localhost:27017/yourDatabaseName",
+      collectionName: "sessions", // Optional: Customize the collection name
+    }),
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24, // 1 day
+      secure: false, // Set to true if using HTTPS
+    },
+  })
+);
+
 
 
 
