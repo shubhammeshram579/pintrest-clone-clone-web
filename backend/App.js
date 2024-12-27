@@ -24,12 +24,12 @@ dotenv.config()
 app.use(cors());
 
 // connect to frontend url
-// app.use(cors({
-//     origin:"-", // Replace with your frontend URL
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//     credentials: true,
-//     allowedHeaders: ['Content-Type', 'Authorization'],
-//   }));
+app.use(cors({
+    origin:"https://pintrest-clone-frontend.vercel.app", // Replace with your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  }));
 
 
 //   app.use((req, res, next) => {
