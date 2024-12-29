@@ -3,7 +3,7 @@ import fs from "fs";
 
 
 
-const tempDir = "./backend/public/temp";
+const tempDir = "../public/temp";
 if (!fs.existsSync(tempDir)) {
   fs.mkdirSync(tempDir, { recursive: true });
   console.log("Directory created:", tempDir);
@@ -13,7 +13,7 @@ if (!fs.existsSync(tempDir)) {
 // store post img using multer
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./backend/public/temp")
+      cb(null, "../public/temp")
     },
     filename: function (req, file, cb) {
       
