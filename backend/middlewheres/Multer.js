@@ -3,11 +3,11 @@ import fs from "fs";
 
 
 
-const tempDir = "./public/temp";
-if (!fs.existsSync(tempDir)) {
-  fs.mkdirSync(tempDir, { recursive: true });
-  console.log("Directory created:", tempDir);
-}
+// const tempDir = "./public/temp";
+// if (!fs.existsSync(tempDir)) {
+//   fs.mkdirSync(tempDir, { recursive: true });
+//   console.log("Directory created:", tempDir);
+// }
 
 
 // store post img using multer
