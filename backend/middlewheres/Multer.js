@@ -9,11 +9,11 @@ import fs from "fs";
 //   console.log("Directory created:", tempDir);
 // }
 
-const tempDir2 = "../public/temp";
-if (!fs.existsSync(tempDir2)) {
-  fs.mkdirSync(tempDir2, { recursive: true });
-  console.log("Directory created:", tempDir2);
-}
+// const tempDir2 = "../public/temp";
+// if (!fs.existsSync(tempDir2)) {
+//   fs.mkdirSync(tempDir2, { recursive: true });
+//   console.log("Directory created:", tempDir2);
+// }
 
 const tempDir3 = "..//../backend/public/temp";
 if (!fs.existsSync(tempDir3)) {
