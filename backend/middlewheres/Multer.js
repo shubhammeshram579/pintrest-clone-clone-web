@@ -3,7 +3,7 @@ import path from "path"
 import dotenv from "dotenv"
 
 
-// dotenv.config();
+dotenv.config();
 
 
 console.log('Current working directory:', process.cwd());
