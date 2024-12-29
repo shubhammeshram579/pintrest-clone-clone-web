@@ -4,7 +4,6 @@ import cookieParser from "cookie-parser"
 import dotenv from "dotenv";
 import expressSession from "express-session"
 import MongoStore from "connect-mongo"
-import path from "path";
 
 import connectDB from "../backend/db/IndexDB.js"
 connectDB()
@@ -37,7 +36,6 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true, limit:"16kb"}))
 app.use(express.static("public"))
 app.use(cookieParser())
-app.set("./public/temp" , path.join(__dirname, "./public/temp"))
 
 
 
