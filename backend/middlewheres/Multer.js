@@ -1,32 +1,48 @@
 import multer from "multer";
-// import path from "path"
-// import { fileURLToPath } from 'url';
-// import fs from "fs";
+import path from "path"
+import dotenv from "dotenv"
 
-// Get the current file's directory
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
 
-// // Create temp directory
-// const tempDir = path.resolve(__dirname, '/temp');
-// if (!fs.existsSync(tempDir)) {
-//   fs.mkdirSync(tempDir, { recursive: true });
-//   console.log("Directory created:", tempDir);
-// }
+dotenv.config();
+
+
+console.log('Current working directory:', process.cwd());
+
+
+const tempDir = process.env.NODE_ENV === 'production'
+  ? '/tmp' // Vercel's writable directory
+  : path.join(process.cwd(), 'public/temp'); // Local directory
+
+console.log('Using temporary directory:', tempDir);
 
 
 
 
 // store post img using multer
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, "/temp")
-    },
-    filename: function (req, file, cb) {
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, "/temp")
+//     },
+//     filename: function (req, file, cb) {
       
-      cb(null, `${Date.now()}-${file.originalname}`)
-    }
-  })
+//       cb(null, `${Date.now()}-${file.originalname}`)
+//     }
+//   })
+
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const tempDir = process.env.NODE_ENV === 'production'
+      ? '/tmp'
+      : path.join(process.cwd(), 'public/temp');
+    console.log('Multer destination path:', tempDir);
+    cb(null, tempDir);
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    cb(null, `${file.fieldname}-${uniqueSuffix}${path.extname(file.originalname)}`);
+  },
+});
 
   
   
