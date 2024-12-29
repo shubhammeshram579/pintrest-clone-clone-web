@@ -23,7 +23,7 @@ const onlineUsers = {};
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
     cors: {
-      origin:process.env.CORS_ORIGIN_FRONTEND_URL, // Replace with your frontend URL
+      origin:"*", // Replace with your frontend URL
       methods: ["GET", "POST","PUT"],
     },
 });
@@ -147,14 +147,14 @@ io.on('connection', (socket) => {
 
 
 
-if (httpServer instanceof http.Server) {
-    console.log('Server is properly initialized.');
-} else {
-    console.error('Server initialization failed. Check your setup.');
-}
+// if (httpServer instanceof http.Server) {
+//     console.log('Server is properly initialized.');
+// } else {
+//     console.error('Server initialization failed. Check your setup.');
+// }
 
-const PORT = process.env.IOPORT || 5000;
-httpServer.listen(PORT, () => console.log(`Server socked io running on port 3000`));
+// const PORT = process.env.IOPORT || 5000;
+// httpServer.listen(PORT, () => console.log(`Server socked io running on port 3000`));
 
 
 

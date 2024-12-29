@@ -21,6 +21,7 @@ const  PostForm = ({post}) => {
     const token = stoken || localStorageToken || accessToken;
 
 
+    console.log("accessToken",accessToken)
 
 
     // form data setup
@@ -34,10 +35,10 @@ const  PostForm = ({post}) => {
 
     // fatch addpost api
 try {
-      const response = await axios.post("https://pintrest-clone-api.vercel.app/api/posts/addpost",formData,{
-        headers:{"Authorization":`Bearer ${token}`}
+      const response = await axios.post(`https://pintrest-clone-api.vercel.app/api/posts/addpost`,formData,{
+        headers:{"Authorization":`Bearer ${accessToken}`}
       })
-      console.log(response.data)
+      console.log("cloudernry data",response.data)
       alert("post uploaded successfully")
       navigate("/")
       return response.data
