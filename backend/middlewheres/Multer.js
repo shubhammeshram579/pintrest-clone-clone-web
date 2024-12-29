@@ -1,32 +1,22 @@
 import multer from "multer";
 import fs from "fs";
+import path from "path"
 
 
-
-// const tempDir = "./public/temp";
-// if (!fs.existsSync(tempDir)) {
-//   fs.mkdirSync(tempDir, { recursive: true });
-//   console.log("Directory created:", tempDir);
-// }
-
-// const tempDir2 = "../public/temp";
-// if (!fs.existsSync(tempDir2)) {
-//   fs.mkdirSync(tempDir2, { recursive: true });
-//   console.log("Directory created:", tempDir2);
-// }
-
-const tempDir3 = "..//../backend/public/temp";
-if (!fs.existsSync(tempDir3)) {
-  fs.mkdirSync(tempDir3, { recursive: true });
-  console.log("Directory created:", tempDir3);
+// Create temp directory
+const tempDir = path.resolve(__dirname, '../backend/public/temp');
+if (!fs.existsSync(tempDir)) {
+  fs.mkdirSync(tempDir, { recursive: true });
+  console.log("Directory created:", tempDir);
 }
+
 
 
 
 // store post img using multer
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./public/temp")
+      cb(null, tempDir)
     },
     filename: function (req, file, cb) {
       
