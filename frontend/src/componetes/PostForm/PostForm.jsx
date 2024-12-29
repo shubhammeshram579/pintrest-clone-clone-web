@@ -34,7 +34,7 @@ const  PostForm = ({post}) => {
 
     // fatch addpost api
 try {
-      const response = await axios.post("https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/posts/addpost",formData,{
+      const response = await axios.post("https://pintrest-clone-api.vercel.app/api/posts/addpost",formData,{
         headers:{"Authorization":`Bearer ${token}`}
       })
       console.log(response.data)

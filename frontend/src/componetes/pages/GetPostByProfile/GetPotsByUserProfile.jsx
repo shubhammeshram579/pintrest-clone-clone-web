@@ -35,7 +35,7 @@ const GetPotsByUserProfile = () => {
     const fatchGetUser = async () => {
       try {
         const response = await axios.get(
-          `https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/users/getUsersById?_id=${userId}`,
+          `https://pintrest-clone-api.vercel.app/api/users/getUsersById?_id=${userId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

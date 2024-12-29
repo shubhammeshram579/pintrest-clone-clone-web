@@ -32,7 +32,7 @@ function Header({
     const fatchCurrentUser = async () => {
       try {
         const userData = await axios.get(
-          "https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/users/current-user",
+          "https://pintrest-clone-api.vercel.app/api/users/current-user",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

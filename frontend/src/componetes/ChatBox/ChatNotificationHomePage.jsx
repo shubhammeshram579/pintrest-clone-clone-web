@@ -24,7 +24,7 @@ const ChatNotification = () => {
   const fetchNotifications = async () => {
     try {
       const response = await axios.get(
-        "https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/chatMessage/chatnotifications",
+        "https://pintrest-clone-api.vercel.app/api/chatMessage/chatnotifications",
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -89,7 +89,7 @@ const ChatNotification = () => {
     // Mark the message as read Api
     try {
       await axios.put(
-        `https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/chatMessage/readchat/${notification.from._id}/${notification.to}`,
+        `https://pintrest-clone-api.vercel.app/api/chatMessage/readchat/${notification.from._id}/${notification.to}`,
         {},
         {
           headers: {

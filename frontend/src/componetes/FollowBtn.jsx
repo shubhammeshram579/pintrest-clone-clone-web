@@ -11,14 +11,14 @@ const FollowButton = ({ userId, targetUserId }) => {
   const handleFollow = async () => {
     try {
       if (isFollowing) {
-        await axios.post('https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/users/unfollow', { userId, targetUserId },{
+        await axios.post('https://pintrest-clone-api.vercel.app/api/users/unfollow', { userId, targetUserId },{
           headers:{
             Authorization: `Bearer ${accessToken}`
           }
         });
         setIsFollowing(false);
       } else {
-        await axios.post('https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/users/follow', { userId, targetUserId },{
+        await axios.post('https://pintrest-clone-api.vercel.app/api/users/follow', { userId, targetUserId },{
           headers:{
             Authorization: `Bearer ${accessToken}`
           }
