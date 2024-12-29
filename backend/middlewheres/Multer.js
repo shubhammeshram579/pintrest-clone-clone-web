@@ -1,10 +1,14 @@
 import multer from "multer";
-import fs from "fs";
 import path from "path"
+import { fileURLToPath } from 'url';
+import fs from "fs";
 
+// Get the current file's directory
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Create temp directory
-const tempDir = path.resolve(__dirname, '../backend/public/temp');
+const tempDir = path.resolve(__dirname, './public/temp');
 if (!fs.existsSync(tempDir)) {
   fs.mkdirSync(tempDir, { recursive: true });
   console.log("Directory created:", tempDir);
