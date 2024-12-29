@@ -88,7 +88,7 @@ const ChatMessageBox = () => {
     const fatchChats = async () => {
       try {
         const response = await axios.get(
-          `https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/chatMessage/${from}/${to}`,
+          `https://pintrest-clone-api.vercel.app/api/chatMessage/${from}/${to}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -138,7 +138,7 @@ const ChatMessageBox = () => {
 
       // send message Api
       await axios.post(
-        `https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/chatMessage/send`,
+        `https://pintrest-clone-api.vercel.app/api/chatMessage/send`,
         newMessage,
         {
           headers: {
@@ -178,7 +178,7 @@ const ChatMessageBox = () => {
      // Mark the message as read
      const readchats = async () =>{
      try {
-      await axios.put(`https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/chatMessage/readchat/${from}/${to}`,{
+      await axios.put(`https://pintrest-clone-api.vercel.app/api/chatMessage/readchat/${from}/${to}`,{
       },{
         headers:{
           "Authorization":`Bearer ${accessToken}`

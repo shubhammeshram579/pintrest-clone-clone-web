@@ -16,16 +16,12 @@ const app = express();
 dotenv.config()
 
 
-
-
-
-
 // Basic CORS setup
 app.use(cors());
 
 // connect to frontend url
 app.use(cors({
-    origin:"https://pintrest-clone-frontend.vercel.app", // Replace with your frontend URL
+    origin:process.env.CORS_ORIGIN_FRONTEND_URL, // Replace with your frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization'],
@@ -35,9 +31,7 @@ app.use(cors({
 
 
 
-// app.use(cors());
 // some midelware use file confifration
-// app.use(express.json({limit: "16kb"}))
 app.use(express.json())
 app.use(express.urlencoded({extended: true, limit:"16kb"}))
 app.use(express.static("public"))

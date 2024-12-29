@@ -27,7 +27,7 @@ function UserLogin() {
   const onSubmit = async (data) => {
     try {
       const session = await axios.post(
-        "https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/users/login",
+        "https://pintrest-clone-api.vercel.app/api/users/login",
         data,
       );
 
