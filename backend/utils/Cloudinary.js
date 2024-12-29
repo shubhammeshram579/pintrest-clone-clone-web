@@ -3,11 +3,7 @@ import fs from "fs"
 import dotenv from "dotenv";
 
 // configration env file path
-dotenv.config({
-    path: "./.env"
-});
-
-
+dotenv.config();
 
 // connect with cloudinary cloud server
 cloudinary.config({
