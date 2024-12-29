@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Create temp directory
-const tempDir = path.resolve(__dirname, './public/temp');
+const tempDir = path.resolve(__dirname, '/temp');
 if (!fs.existsSync(tempDir)) {
   fs.mkdirSync(tempDir, { recursive: true });
   console.log("Directory created:", tempDir);
