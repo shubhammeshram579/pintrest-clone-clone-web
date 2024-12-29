@@ -20,6 +20,8 @@ const publishPost = AsynceHendler(async (req, res) =>{
         const userId = req.user?._id;
         const postImageLocalpath = req.files?.postImg?.[0].path;
 
+        console.log("fils path",postImageLocalpath)
+
 
 
         // console.log(postImageLocalpath)
@@ -44,6 +46,8 @@ const publishPost = AsynceHendler(async (req, res) =>{
             owner: userId,
 
         })
+
+        console.log("postpublic",PostPublish)
 
         if(!PostPublish){
             throw new ApiError(500, "somthing went wrong")
