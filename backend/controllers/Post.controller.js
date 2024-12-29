@@ -19,8 +19,11 @@ const publishPost = AsynceHendler(async (req, res) =>{
         const {title,description,status} = req.body;
         const userId = req.user?._id;
         const postImageLocalpath = req.files?.postImg?.[0].path;
+        // const postImageLocalpath = req.files?.path;
 
-        // console.log(req.body)
+
+
+        console.log(postImageLocalpath)
 
         if(!postImageLocalpath){
             throw new ApiError(400, "Post file requred")
