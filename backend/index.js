@@ -23,7 +23,7 @@ const onlineUsers = {};
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
     cors: {
-      origin:process.env.CORS_ORIGIN_FRONTEND_URL, // Replace with your frontend URL
+      origin:"*", // Replace with your frontend URL
       methods: ["GET", "POST","PUT"],
     },
 });
