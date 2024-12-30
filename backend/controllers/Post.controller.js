@@ -19,26 +19,16 @@ const publishPost = AsynceHendler(async (req, res) =>{
         const {title,description,status} = req.body;
         const userId = req.user?._id;
         // const postImageLocalpath = req.files?.postImg?.[0].path;
+        const fileBuffer = req.file.buffer; // File buffer from memory
 
         if (!req.file) {
             return res.status(400).json({ message: "No file uploaded" });
           }
 
-          
-        const postImageLocalpath = req.file.path;
-
-        console.log("fils path",postImageLocalpath)
+        const uploadPostOnCloudinary = await uploadCloudinary(fileBuffer)
 
 
-
-        // console.log(postImageLocalpath)
-
-        if(!postImageLocalpath){
-            throw new ApiError(400, "Post file requred")
-        }
-
-        const uploadPostOnCloudinary = await uploadCloudinary(postImageLocalpath)
-
+        console.log(uploadPostOnCloudinary)
 
         if(!uploadPostOnCloudinary){
             throw new ApiError(400, "upladed  PostImage error")
@@ -48,7 +38,7 @@ const publishPost = AsynceHendler(async (req, res) =>{
         const PostPublish = await Post.create({
             title,
             description,
-            postImg: uploadPostOnCloudinary.url,
+            postImg: uploadPostOnCloudinary.secure_url,
             status,
             owner: userId,
 
