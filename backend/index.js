@@ -29,10 +29,11 @@ const onlineUsers = {};
 // });
 
 
-const io = new Server({
+const io = new Server(app,{
   cors: {
       origin: "https://pintrest-clone-frontend.vercel.app", // Replace with your frontend origin
       methods: ["GET", "POST"],
+      credentials: true,
   },
 });
 
