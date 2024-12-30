@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser"
 import dotenv from "dotenv";
 import expressSession from "express-session"
 import MongoStore from "connect-mongo"
+import path from "path"
 
 import connectDB from "../backend/db/IndexDB.js"
 connectDB()
@@ -34,7 +35,7 @@ app.use(cors({
 // some midelware use file confifration
 app.use(express.json())
 app.use(express.urlencoded({extended: true, limit:"16kb"}))
-app.use(express.static("public"))
+app.use(express.static(path.join(__dirname,"./public")));
 app.use(cookieParser())
 
 
