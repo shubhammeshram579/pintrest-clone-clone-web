@@ -17,7 +17,7 @@ import io from "socket.io-client";
 
 // const socket = io("https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app");
 
-const socket = io("https://pintrest-clone-api.vercel.app", {
+const socket = io("wss://pintrest-clone-api.vercel.app", {
   transports: ["websocket"], // Ensure WebSocket transport is used
 });
 

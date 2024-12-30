@@ -23,7 +23,7 @@ export const NotificationProvider = ({ children }) => {
     //   },
     // });
 
-    const socket = io("https://pintrest-clone-api.vercel.app", {
+    const socket = io("wss://pintrest-clone-api.vercel.app", {
       transports: ["websocket"], // Ensure WebSocket transport is used
     });
 
@@ -88,7 +88,7 @@ export const NotificationProvider = ({ children }) => {
       //   },
       // });
 
-      const socket = io("https://pintrest-clone-api.vercel.app", {
+      const socket = io("wss://pintrest-clone-api.vercel.app", {
         transports: ["websocket"], // Ensure WebSocket transport is used
       });
 
