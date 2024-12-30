@@ -12,7 +12,11 @@ import io from "socket.io-client";
 import "..//..//../App.css"
 import "..//..//../Responsive.css"
 
-const socket = io("https://pintrest-clone-api.vercel.app");
+// const socket = io("https://pintrest-clone-api.vercel.app");
+
+const socket = io("https://pintrest-clone-api.vercel.app", {
+  transports: ["websocket"], // Ensure WebSocket transport is used
+});
 
 const HomeSinglePost = () => {
   const { postId } = useParams();

@@ -1,48 +1,50 @@
-import React, { createContext, useState, useEffect } from 'react';
-import axios from 'axios';
-import io from 'socket.io-client';
-import { useSelector } from 'react-redux';
-
+import React, { createContext, useState, useEffect } from "react";
+import axios from "axios";
+import io from "socket.io-client";
+import { useSelector } from "react-redux";
 
 // Create Context
 export const NotificationContext = createContext();
-
-
-
 
 // Context Provider Component
 export const NotificationProvider = ({ children }) => {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
   const [notificationCount, setNotificationCount] = useState(0);
- 
 
-  const accessToken = useSelector((state) => state.auth.user?.accessToken)
-
+  const accessToken = useSelector((state) => state.auth.user?.accessToken);
 
   // fatch new post notification api and used socked io.
   useEffect(() => {
+    // const socket = io("https://pintrest-clone-api.vercel.app", {
+    //   withCredentials: true, // Ensure credentials are sent if needed
+    //   extraHeaders: {
+    //       "my-custom-header": `${accessToken}`, // Example custom headers if required
+    //   },
+    // });
+
     const socket = io("https://pintrest-clone-api.vercel.app", {
-      withCredentials: true, // Ensure credentials are sent if needed
-      extraHeaders: {
-          "my-custom-header": `${accessToken}`, // Example custom headers if required
-      },
+      transports: ["websocket"], // Ensure WebSocket transport is used
     });
+
     // console.log(socket)
 
     const fetchNotifications = async () => {
       try {
-        const response = await axios.get('https://pintrest-clone-api.vercel.app/api/Notification', {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        });
+        const response = await axios.get(
+          "https://pintrest-clone-api.vercel.app/api/Notification",
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
         // console.log("post notifaction",response.data.data.notification)
         setNotifications(response.data.data.notification);
         setNotificationCount(response.data.data.notification.length);
         setLoading(false);
       } catch (error) {
-        console.log('Failed to fetch notifications', error);
+        console.log("Failed to fetch notifications", error);
         setLoading(false);
       }
     };
@@ -50,7 +52,7 @@ export const NotificationProvider = ({ children }) => {
     fetchNotifications();
 
     // Listen for notification deletion in real-time
-    socket.on('notificationDeleted', (deletedNotificationId) => {
+    socket.on("notificationDeleted", (deletedNotificationId) => {
       setNotifications((prevNotifications) =>
         prevNotifications.filter((n) => n._id !== deletedNotificationId)
       );
@@ -62,7 +64,6 @@ export const NotificationProvider = ({ children }) => {
     };
   }, [accessToken]);
 
-
   // haadling new Notification post then open the delete
   const handleNotificationClick = async (notificationId, postId, navigate) => {
     setNotifications((prevNotifications) =>
@@ -71,21 +72,29 @@ export const NotificationProvider = ({ children }) => {
     setNotificationCount((prevCount) => prevCount - 1);
 
     try {
-      await axios.delete(`https://pintrest-clone-api.vercel.app/api/Notification/${notificationId}`, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
+      await axios.delete(
+        `https://pintrest-clone-api.vercel.app/api/Notification/${notificationId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+
+      // const socket = io("https://pintrest-clone-api.vercel.app", {
+      //   withCredentials: true, // Ensure credentials are sent if needed
+      //   extraHeaders: {
+      //     "my-custom-header": `${accessToken}`, // Example custom headers if required
+      //   },
+      // });
 
       const socket = io("https://pintrest-clone-api.vercel.app", {
-        withCredentials: true, // Ensure credentials are sent if needed
-        extraHeaders: {
-            "my-custom-header": `${accessToken}`, // Example custom headers if required
-        },
+        transports: ["websocket"], // Ensure WebSocket transport is used
       });
-      socket.emit('deleteNotification', notificationId);
+
+      socket.emit("deleteNotification", notificationId);
     } catch (error) {
-      console.log('Failed to delete notification', error);
+      console.log("Failed to delete notification", error);
     }
 
     navigate(`/getPostByID2/${postId}`);
@@ -93,7 +102,14 @@ export const NotificationProvider = ({ children }) => {
 
   // notification provider
   return (
-    <NotificationContext.Provider value={{ notifications, loading, notificationCount, handleNotificationClick }}>
+    <NotificationContext.Provider
+      value={{
+        notifications,
+        loading,
+        notificationCount,
+        handleNotificationClick,
+      }}
+    >
       {children}
     </NotificationContext.Provider>
   );

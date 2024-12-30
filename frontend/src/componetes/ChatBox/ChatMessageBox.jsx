@@ -15,7 +15,11 @@ import { format, formatDistanceToNow, isToday } from "date-fns";
 // Socket.IO is an event-driven library for real-time web applications. 
 import io from "socket.io-client";
 
-const socket = io("https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app");
+// const socket = io("https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app");
+
+const socket = io("https://pintrest-clone-api.vercel.app", {
+  transports: ["websocket"], // Ensure WebSocket transport is used
+});
 
 
 
@@ -59,7 +63,7 @@ const ChatMessageBox = () => {
     const fatchcurrentUser = async () => {
       try {
         const getcurrentUser = await axios.get(
-          `https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app/api/users/current-user`,
+          `https://pintrest-clone-api.vercel.app/api/users/current-user`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
