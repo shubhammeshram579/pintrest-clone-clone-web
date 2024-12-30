@@ -18,7 +18,14 @@ const publishPost = AsynceHendler(async (req, res) =>{
         // get body req
         const {title,description,status} = req.body;
         const userId = req.user?._id;
-        const postImageLocalpath = req.files?.postImg?.[0].path;
+        // const postImageLocalpath = req.files?.postImg?.[0].path;
+
+        if (!req.file) {
+            return res.status(400).json({ message: "No file uploaded" });
+          }
+
+          
+        const postImageLocalpath = req.file.path;
 
         console.log("fils path",postImageLocalpath)
 

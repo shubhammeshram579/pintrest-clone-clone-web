@@ -16,15 +16,17 @@ router.use(verifyJWT);
 
 
 // post crete router
-router.route("/posts/addpost").post(
-    upload.fields([
-        {
-            name: "postImg",
-            maxCount: 1,
-        }
-    ]), publishPost
+// router.route("/posts/addpost").post(
+//     upload.fields([
+//         {
+//             name: "postImg",
+//             maxCount: 1,
+//         }
+//     ]), publishPost
 
-);
+// );
+
+router.route("/posts/addpost").post(upload.single("postImg"),publishPost)
 
 // get all posts router
 router.route("/posts/getAllpost").get(getAllPost)
