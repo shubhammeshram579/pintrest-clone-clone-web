@@ -40,7 +40,8 @@ app.use(express.urlencoded({extended: true, limit:"16kb"}))
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.use(express.static(path.join(__dirname,"./public")));
+console.log('directory-name 👉️', __dirname);
+app.use(express.static(path.join(__dirname,"./public/temp")));
 app.use(cookieParser())
 
 
