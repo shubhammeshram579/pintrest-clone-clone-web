@@ -148,12 +148,12 @@ const updatePost = AsynceHendler(async (req, res) => {
         try {
             const {postId} = req.params;
             const {title, description,status} = req.body;
-            const localfilpath = req.file?.path;
+            const fileBuffer = req.file.buffer;
             // const userId = req.user._id;
         
             // console.log(localfilpath)
         
-            if(!localfilpath){
+            if(!fileBuffer){
                 throw new ApiError(404, "localfilpath not found")
             }
         
@@ -167,7 +167,7 @@ const updatePost = AsynceHendler(async (req, res) => {
                 throw new ApiError(404, "Post not found");
             }
 
-            const uploadcloud = await uploadCloudinary(localfilpath);
+            const uploadcloud = await uploadCloudinary(fileBuffer);
             
             if(!uploadcloud){
                     throw new ApiError(404, "filenot upladted not found")
@@ -179,7 +179,7 @@ const updatePost = AsynceHendler(async (req, res) => {
                  postId,
                  {
                     $set: {
-                        postImg: uploadcloud.url,
+                        postImg: uploadcloud.secure_url,
                         title: title,
                         description:description,
                         status:status
