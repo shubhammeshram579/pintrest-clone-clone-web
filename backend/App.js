@@ -30,6 +30,7 @@ app.use(cors({
   }));
 
 
+console.log(process.env.CORS_ORIGIN_FRONTEND_URL);
 
 
 
