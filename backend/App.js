@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import expressSession from "express-session"
 import MongoStore from "connect-mongo"
 import path from "path"
+import { fileURLToPath } from "url";
 
 import connectDB from "../backend/db/IndexDB.js"
 connectDB()
@@ -35,6 +36,10 @@ app.use(cors({
 // some midelware use file confifration
 app.use(express.json())
 app.use(express.urlencoded({extended: true, limit:"16kb"}))
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname,"./public")));
 app.use(cookieParser())
 
