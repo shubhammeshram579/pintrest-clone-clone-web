@@ -22,15 +22,37 @@ dotenv.config()
 app.use(cors());
 
 // connect to frontend url
-app.use(cors({
-    origin:process.env.CORS_ORIGIN_FRONTEND_URL, // Replace with your frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization'],
-  }));
+// app.use(cors({
+//     origin:process.env.CORS_ORIGIN_FRONTEND_URL, // Replace with your frontend URL
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     credentials: true,
+//     allowedHeaders: ['Content-Type', 'Authorization'],
+//   }));
 
 
-console.log(process.env.CORS_ORIGIN_FRONTEND_URL);
+  // List of allowed origins
+const allowedOrigins = [
+  "https://pintrest-clone-frontend.vercel.app",
+  "https://pintrest-clone-frontend-fgs2vvnx1.vercel.app",
+];
+
+// Configure CORS to allow multiple origins
+app.use(
+  cors({
+      origin: (origin, callback) => {
+          if (allowedOrigins.includes(origin) || !origin) {
+              callback(null, true);
+          } else {
+              callback(new Error("Not allowed by CORS"));
+          }
+      },
+      credentials: true, // Include credentials if needed (e.g., cookies)
+  })
+);
+
+
+
+// console.log(process.env.CORS_ORIGIN_FRONTEND_URL);
 
 
 
