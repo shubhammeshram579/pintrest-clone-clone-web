@@ -27,22 +27,12 @@ const onlineUsers = {};
 //       methods: ["GET", "POST","PUT"],
 //     },
 // });
-const allowedOrigins = [
-  "https://pintrest-clone-frontend.vercel.app",
-  "https://pintrest-clone-frontend-fgs2vvnx1.vercel.app",
-];
+
 
 const io = new Server({
   cors: {
-      origin: (origin, callback) => {
-        if (allowedOrigins.includes(origin) || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error("Not allowed by CORS"));
-        }
-    },
-    credentials: true, // Include credentials if needed (e.g., cookies), // Replace with your frontend origin
-    methods: ["GET", "POST"],
+      origin: "https://pintrest-clone-frontend.vercel.app", // Replace with your frontend origin
+      methods: ["GET", "POST"],
   },
 });
 
