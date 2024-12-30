@@ -15,7 +15,7 @@ const Notification = ({setShowNotifications,showNotifications})  => {
   const authStatus = useSelector((state) => state.auth.isLoggedIn);
 
 
-
+console.log(notifications);
   // animation effect
   useEffect(() => {
     // Delay the visibility state change to trigger smooth transition
