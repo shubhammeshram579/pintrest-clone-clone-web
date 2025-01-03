@@ -119,7 +119,7 @@ const ChatMessageBox = () => {
 
   // get real time other user chat using socket io.
   useEffect(() => {
-    if(authStatus){
+    if(currentUser){
     const socket = io("wss://pintrest-clone-api.vercel.app", {
       transports: ["websocket"], // Ensure WebSocket transport is used
   });
@@ -131,13 +131,13 @@ const ChatMessageBox = () => {
     return () => socket.off("receiveMessage");
 
   }
-  }, [authStatus]);
+  }, [currentUser]);
 
 
 
   // send messages post Api
   const onSubmit = async (data) => {
-    if(authStatus){
+    if(currentUser){
     try {
       const newMessage = {
         from: from,

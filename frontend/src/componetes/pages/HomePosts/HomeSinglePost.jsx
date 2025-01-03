@@ -117,7 +117,7 @@ const HomeSinglePost = () => {
 
   // Fetch comments and set up socket listeners
   useEffect(() => {
-    if(authStatus){
+    if(currentUser){
     const fetchComments = async () => {
       try {
         const resComment = await axios.get(
@@ -148,7 +148,7 @@ const HomeSinglePost = () => {
 
     return () => socket.off("recivedComment");
   }
-  }, [postId, accessToken,authStatus]); // Add accessToken and postId as dependencies
+  }, [postId, accessToken,currentUser]); // Add accessToken and postId as dependencies
 
 
 
@@ -157,7 +157,7 @@ const HomeSinglePost = () => {
 
   // send comment post api 
   const onSubmit = async (data) => {
-    if(authStatus){
+    if(currentUser){
     try {
       const newComment = {
         content: data.content,
