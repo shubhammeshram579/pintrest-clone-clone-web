@@ -141,7 +141,19 @@ const HomeSinglePost = () => {
 
     const socket = io("wss://pintrest-clone-api.vercel.app", {
       transports: ["websocket"], // Ensure WebSocket transport is used
+      path: "/socket.io/",  
+      reconnectionAttempts: 5,
     });
+
+    socket.on("connect", () => {
+      console.log("Connected to WebSocket server");
+    });
+    
+    socket.on("connect_error", (err) => {
+      console.error("Connection error:", err.message);
+    });
+
+
     socket.on("recivedComment", (data) => {
       setComment((prevComment) => [...prevComment, data]);
     });
@@ -180,6 +192,16 @@ const HomeSinglePost = () => {
 
       const socket = io("wss://pintrest-clone-api.vercel.app", {
         transports: ["websocket"], // Ensure WebSocket transport is used
+        path: "/socket.io/",  
+        reconnectionAttempts: 5,
+      });
+
+      socket.on("connect", () => {
+        console.log("Connected to WebSocket server");
+      });
+      
+      socket.on("connect_error", (err) => {
+        console.error("Connection error:", err.message);
       });
 
       socket.emit("sendComment", newComment);

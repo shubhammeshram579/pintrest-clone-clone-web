@@ -1,6 +1,7 @@
 import dotenv from "dotenv"
 import cors from "cors"
-import app from "./App.js"
+import express from "express"
+// import app from "./App.js"
 import {ChatMessage} from "./models/ChatMessage.model.js"
 import { User } from "./models/User.model.js"
 
@@ -9,6 +10,9 @@ import { User } from "./models/User.model.js"
 import http from "http"
 import { Server } from 'socket.io';
 
+
+
+const app = express();
 
 // app.use(cors());
 dotenv.config()
@@ -20,22 +24,22 @@ const onlineUsers = {};
 
 
 // // // set up of funcanality
-// const httpServer = http.createServer(app);
-// const io = new Server(httpServer, {
-//     cors: {
-//       origin:"*", // Replace with your frontend URL
-//       methods: ["GET", "POST","PUT"],
-//     },
-// });
-
-
-const io = new Server(app,{
-  cors: {
-      origin: "https://pintrest-clone-frontend.vercel.app", // Replace with your frontend origin
-      methods: ["GET", "POST"],
-      credentials: true,
-  },
+const httpServer = http.createServer(app);
+const io = new Server(httpServer, {
+    cors: {
+      origin:"https://pintrest-clone-frontend.vercel.app", // Replace with your frontend URL
+      methods: ["GET", "POST","PUT"],
+    },
 });
+
+
+// const io = new Server(app,{
+//   cors: {
+//       origin: "https://pintrest-clone-frontend.vercel.app", // Replace with your frontend origin
+//       methods: ["GET", "POST"],
+//       credentials: true,
+//   },
+// });
 
 
 
@@ -166,6 +170,9 @@ io.on('connection', (socket) => {
 // httpServer.listen(PORT, () => console.log(`Server socked io running on port 3000`));
 
 
+httpServer.listen(5000, () => {
+  console.log("Server running on port 3000");
+});
 
 export default io
 

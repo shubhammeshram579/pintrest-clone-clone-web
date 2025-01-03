@@ -122,7 +122,19 @@ const ChatMessageBox = () => {
     if(currentUser){
     const socket = io("wss://pintrest-clone-api.vercel.app", {
       transports: ["websocket"], // Ensure WebSocket transport is used
+      path: "/socket.io/",  
+      reconnectionAttempts: 5,
   });
+
+  socket.on("connect", () => {
+    console.log("Connected to WebSocket server");
+  });
+  
+  socket.on("connect_error", (err) => {
+    console.error("Connection error:", err.message);
+  });
+
+  
     socket.on("receiveMessage", (data) => {
       setChats((prevChats) => [...prevChats, data]);
       scrollToLatestMessage();
@@ -162,7 +174,19 @@ const ChatMessageBox = () => {
       // set real time chet messages using socket io.
       const socket = io("wss://pintrest-clone-api.vercel.app", {
         transports: ["websocket"], // Ensure WebSocket transport is used
+        path: "/socket.io/",  
+        reconnectionAttempts: 5,
     });
+
+    socket.on("connect", () => {
+      console.log("Connected to WebSocket server");
+    });
+    
+    socket.on("connect_error", (err) => {
+      console.error("Connection error:", err.message);
+    });
+
+
       socket.emit("sendMessage", newMessage);
       scrollToLatestMessage();
 
