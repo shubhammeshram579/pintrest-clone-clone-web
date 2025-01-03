@@ -14,9 +14,9 @@ import "..//..//../Responsive.css"
 
 // const socket = io("https://pintrest-clone-api.vercel.app");
 
-const socket = io("wss://pintrest-clone-api.vercel.app", {
-  transports: ["websocket"], // Ensure WebSocket transport is used
-});
+// const socket = io("wss://pintrest-clone-api.vercel.app", {
+//   transports: ["websocket"], // Ensure WebSocket transport is used
+// });
 
 const HomeSinglePost = () => {
   const { postId } = useParams();
@@ -35,8 +35,10 @@ const HomeSinglePost = () => {
     formState: { errors },
   } = useForm();
 
+   const authStatus = useSelector((state) => state.auth.isLoggedIn);
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
   // const user = useSelector((state) => state.auth.user);
+  
 
   // download butten and hide butten
   const [visible, setVisible] = useState(false);
@@ -115,6 +117,7 @@ const HomeSinglePost = () => {
 
   // Fetch comments and set up socket listeners
   useEffect(() => {
+    if(authStatus){
     const fetchComments = async () => {
       try {
         const resComment = await axios.get(
@@ -136,12 +139,16 @@ const HomeSinglePost = () => {
     // Fetch comments initially
     fetchComments();
 
+    const socket = io("wss://pintrest-clone-api.vercel.app", {
+      transports: ["websocket"], // Ensure WebSocket transport is used
+    });
     socket.on("recivedComment", (data) => {
       setComment((prevComment) => [...prevComment, data]);
     });
 
     return () => socket.off("recivedComment");
-  }, [postId, accessToken]); // Add accessToken and postId as dependencies
+  }
+  }, [postId, accessToken,authStatus]); // Add accessToken and postId as dependencies
 
 
 
@@ -150,6 +157,7 @@ const HomeSinglePost = () => {
 
   // send comment post api 
   const onSubmit = async (data) => {
+    if(authStatus){
     try {
       const newComment = {
         content: data.content,
@@ -169,6 +177,11 @@ const HomeSinglePost = () => {
       );
       alert(addcomment.data.message);
       // console.log(newComment);
+
+      const socket = io("wss://pintrest-clone-api.vercel.app", {
+        transports: ["websocket"], // Ensure WebSocket transport is used
+      });
+
       socket.emit("sendComment", newComment);
       reset();
       return addcomment.data;
@@ -176,6 +189,7 @@ const HomeSinglePost = () => {
       console.log(error);
       alert("Error registration ");
     }
+  }
   };
 
 

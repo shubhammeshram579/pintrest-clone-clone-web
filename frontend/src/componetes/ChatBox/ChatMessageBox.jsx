@@ -17,9 +17,9 @@ import io from "socket.io-client";
 
 // const socket = io("https://pintrest-clone-o5vo6u2w8-shubham-meshrams-projects-cfc33b49.vercel.app");
 
-const socket = io("wss://pintrest-clone-api.vercel.app", {
-  transports: ["websocket"], // Ensure WebSocket transport is used
-});
+// const socket = io("wss://pintrest-clone-api.vercel.app", {
+//       transports: ["websocket"], // Ensure WebSocket transport is used
+// });
 
 
 
@@ -31,6 +31,7 @@ const ChatMessageBox = () => {
   const [visible ,setVisible] = useState(false)
   const [currentUser, setCurrentUser] = useState([]);
   const latestMessageRef = useRef(null); // Ref to track the latest message
+  const authStatus = useSelector((state) => state.auth.isLoggedIn);
 
 
   // error heandling 
@@ -46,7 +47,6 @@ const ChatMessageBox = () => {
   
 
 
-    
 
 
   // Animation set time
@@ -119,18 +119,25 @@ const ChatMessageBox = () => {
 
   // get real time other user chat using socket io.
   useEffect(() => {
+    if(authStatus){
+    const socket = io("wss://pintrest-clone-api.vercel.app", {
+      transports: ["websocket"], // Ensure WebSocket transport is used
+  });
     socket.on("receiveMessage", (data) => {
       setChats((prevChats) => [...prevChats, data]);
       scrollToLatestMessage();
     });
 
     return () => socket.off("receiveMessage");
-  }, []);
+
+  }
+  }, [authStatus]);
 
 
 
   // send messages post Api
   const onSubmit = async (data) => {
+    if(authStatus){
     try {
       const newMessage = {
         from: from,
@@ -153,6 +160,9 @@ const ChatMessageBox = () => {
 
 
       // set real time chet messages using socket io.
+      const socket = io("wss://pintrest-clone-api.vercel.app", {
+        transports: ["websocket"], // Ensure WebSocket transport is used
+    });
       socket.emit("sendMessage", newMessage);
       scrollToLatestMessage();
 
@@ -161,6 +171,7 @@ const ChatMessageBox = () => {
     } catch (error) {
       console.log(error.message);
     }
+  }
   };
 
 

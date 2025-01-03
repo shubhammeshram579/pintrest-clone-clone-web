@@ -12,7 +12,6 @@ function Header({
   setShowNotifications,
   showMassage,
 }) {
-  const [currentUser, setCurrentUser] = useState([]);
   const { notificationCount } = useContext(NotificationContext);
   const [showMessages, setShowMessages] = useState(false);
   const [ownerUser, setOwnerUser] = useState(false);
@@ -25,35 +24,6 @@ function Header({
 
   // current user from redux
   const user = useSelector((state) => state.auth.user?.user);
-
-
-  // fatch current user api
-  // useEffect(() => {
-    
-  //   const fatchCurrentUser = async () => {
-  //     try {
-  //       const userData = await axios.get(
-  //         "https://pintrest-clone-api.vercel.app/api/users/current-user",
-  //         {
-  //           headers: {
-  //             Authorization: `Bearer ${accessToken}`,
-  //           },
-  //         }
-  //       );
-  //       // console.log("savePost currentuser",userData.data.data.curentUser._id)
-  //       setCurrentUser(userData.data.data.curentUser);
-
-  //       setLoading(false);
-  //     } catch (error) {
-  //       // setError(error.message);
-  //       console.log(error.message);
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fatchCurrentUser();
-  // }, []);
-
 
 
   // notication buttune heandaler
