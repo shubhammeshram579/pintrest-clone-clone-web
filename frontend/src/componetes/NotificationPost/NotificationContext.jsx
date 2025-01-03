@@ -11,17 +11,14 @@ export const NotificationProvider = ({ children }) => {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
   const [notificationCount, setNotificationCount] = useState(0);
+  const authStatus = useSelector((state) => state.auth.isLoggedIn);
 
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
 
   // fatch new post notification api and used socked io.
   useEffect(() => {
-    // const socket = io("https://pintrest-clone-api.vercel.app", {
-    //   withCredentials: true, // Ensure credentials are sent if needed
-    //   extraHeaders: {
-    //       "my-custom-header": `${accessToken}`, // Example custom headers if required
-    //   },
-    // });
+
+    if(authStatus){
 
     const socket = io("wss://pintrest-clone-api.vercel.app", {
       transports: ["websocket"], // Ensure WebSocket transport is used
@@ -62,7 +59,8 @@ export const NotificationProvider = ({ children }) => {
     return () => {
       socket.disconnect();
     };
-  }, [accessToken]);
+  }
+  }, [accessToken,authStatus]);
 
   // haadling new Notification post then open the delete
   const handleNotificationClick = async (notificationId, postId, navigate) => {
@@ -80,13 +78,6 @@ export const NotificationProvider = ({ children }) => {
           },
         }
       );
-
-      // const socket = io("https://pintrest-clone-api.vercel.app", {
-      //   withCredentials: true, // Ensure credentials are sent if needed
-      //   extraHeaders: {
-      //     "my-custom-header": `${accessToken}`, // Example custom headers if required
-      //   },
-      // });
 
       const socket = io("wss://pintrest-clone-api.vercel.app", {
         transports: ["websocket"], // Ensure WebSocket transport is used

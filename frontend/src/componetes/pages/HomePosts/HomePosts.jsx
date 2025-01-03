@@ -32,6 +32,7 @@ const HomePosts = () => {
 
   // fatch all posts 
   useEffect(() => {
+    if(authStatus){
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
@@ -52,7 +53,8 @@ const HomePosts = () => {
     };
 
     fetchPosts();
-  }, []);
+  }
+  }, [authStatus]);
 
 
 
