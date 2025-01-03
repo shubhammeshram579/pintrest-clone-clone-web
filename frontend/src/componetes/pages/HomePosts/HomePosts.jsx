@@ -70,22 +70,28 @@ const HomePosts = () => {
   // Function to randomly decide if a margin should be applied
   const shouldApplyMargin = () => Math.random() < 0.5; // 50% chance to apply margin
 
+
+
+
+  // if user not login then show homepage
+  useEffect(()=>{
+    if (!authStatus) {
+      return (
+        <Contenier>
+          <div className="text-center">
+            <Homepage />
+          </div>
+        </Contenier>
+      );
+    }
+  },[])
+
+
   if (loading) return <div className="py-[90vh]">Loading...</div>;
   if (!posts) {
     return <div>Loading...</div>;
   }
-
-
-  // if user not login then show homepage
-  if (!authStatus) {
-    return (
-      <Contenier>
-        <div className="text-center">
-          <Homepage />
-        </div>
-      </Contenier>
-    );
-  }
+  
 
 
   return (

@@ -28,32 +28,32 @@ function Header({
 
 
   // fatch current user api
-  useEffect(() => {
-    // if(authStatus){
-    const fatchCurrentUser = async () => {
-      try {
-        const userData = await axios.get(
-          "https://pintrest-clone-api.vercel.app/api/users/current-user",
-          {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-            },
-          }
-        );
-        // console.log("savePost currentuser",userData.data.data.curentUser._id)
-        setCurrentUser(userData.data.data.curentUser);
+  // useEffect(() => {
+  //   if(!authStatus){
+  //   const fatchCurrentUser = async () => {
+  //     try {
+  //       const userData = await axios.get(
+  //         "https://pintrest-clone-api.vercel.app/api/users/current-user",
+  //         {
+  //           headers: {
+  //             Authorization: `Bearer ${accessToken}`,
+  //           },
+  //         }
+  //       );
+  //       // console.log("savePost currentuser",userData.data.data.curentUser._id)
+  //       setCurrentUser(userData.data.data.curentUser);
 
-        setLoading(false);
-      } catch (error) {
-        // setError(error.message);
-        console.log(error.message);
-        setLoading(false);
-      }
-    };
+  //       setLoading(false);
+  //     } catch (error) {
+  //       // setError(error.message);
+  //       console.log(error.message);
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fatchCurrentUser();
+  //   fatchCurrentUser();
   // }
-  }, []);
+  // }, [authStatus]);
 
 
 
