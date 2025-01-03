@@ -21,38 +21,38 @@ function Header({
   const authStatus = useSelector((state) => state.auth.isLoggedIn);
   const navigate = useNavigate();
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   // current user from redux
   const user = useSelector((state) => state.auth.user?.user);
 
 
   // fatch current user api
-  useEffect(() => {
+  // useEffect(() => {
     
-    const fatchCurrentUser = async () => {
-      try {
-        const userData = await axios.get(
-          "https://pintrest-clone-api.vercel.app/api/users/current-user",
-          {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-            },
-          }
-        );
-        // console.log("savePost currentuser",userData.data.data.curentUser._id)
-        setCurrentUser(userData.data.data.curentUser);
+  //   const fatchCurrentUser = async () => {
+  //     try {
+  //       const userData = await axios.get(
+  //         "https://pintrest-clone-api.vercel.app/api/users/current-user",
+  //         {
+  //           headers: {
+  //             Authorization: `Bearer ${accessToken}`,
+  //           },
+  //         }
+  //       );
+  //       // console.log("savePost currentuser",userData.data.data.curentUser._id)
+  //       setCurrentUser(userData.data.data.curentUser);
 
-        setLoading(false);
-      } catch (error) {
-        // setError(error.message);
-        console.log(error.message);
-        setLoading(false);
-      }
-    };
+  //       setLoading(false);
+  //     } catch (error) {
+  //       // setError(error.message);
+  //       console.log(error.message);
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fatchCurrentUser();
-  }, []);
+  //   fatchCurrentUser();
+  // }, []);
 
 
 
@@ -96,7 +96,7 @@ function Header({
   };
 
   // page loadig if error
-  if (loading) return <div className="py-[90vh]">Loading...</div>;
+  // if (loading) return <div className="py-[90vh]">Loading...</div>;
 
 
 

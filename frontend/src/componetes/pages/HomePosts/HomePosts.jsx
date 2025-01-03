@@ -74,7 +74,7 @@ const HomePosts = () => {
 
 
   // if user not login then show homepage
-  useEffect(()=>{
+
     if (!authStatus) {
       return (
         <Contenier>
@@ -84,7 +84,6 @@ const HomePosts = () => {
         </Contenier>
       );
     }
-  },[])
 
 
   if (loading) return <div className="py-[90vh]">Loading...</div>;
