@@ -29,7 +29,7 @@ function Header({
 
   // fatch current user api
   useEffect(() => {
-    if(authStatus){
+    // if(authStatus){
     const fatchCurrentUser = async () => {
       try {
         const userData = await axios.get(
@@ -52,8 +52,8 @@ function Header({
     };
 
     fatchCurrentUser();
-  }
-  }, [authStatus]);
+  // }
+  }, []);
 
 
 
