@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server: {
     proxy:{
-      "/api": "https://pintrest-clone-api.vercel.app",
+      "/api": "https://printrest-clone-api.onrender.com",
     },
   },
   plugins: [react()],

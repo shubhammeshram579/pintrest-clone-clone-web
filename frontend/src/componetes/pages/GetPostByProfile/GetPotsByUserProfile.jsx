@@ -35,7 +35,7 @@ const GetPotsByUserProfile = () => {
     const fatchGetUser = async () => {
       try {
         const response = await axios.get(
-          `https://pintrest-clone-api.vercel.app/api/users/getUsersById?_id=${userId}`,
+          `https://printrest-clone-api.onrender.com/api/users/getUsersById?_id=${userId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

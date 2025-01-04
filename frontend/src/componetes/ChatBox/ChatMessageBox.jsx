@@ -120,7 +120,7 @@ const ChatMessageBox = () => {
   // get real time other user chat using socket io.
   useEffect(() => {
     if(currentUser){
-    const socket = io("wss://pintrest-clone-api.vercel.app", {
+    const socket = io("https://printrest-clone-api.onrender.com", {
       transports: ["websocket"], // Ensure WebSocket transport is used
       path: "/socket.io/",  
       reconnectionAttempts: 5,
@@ -161,7 +161,7 @@ const ChatMessageBox = () => {
 
       // send message Api
       await axios.post(
-        `https://pintrest-clone-api.vercel.app/api/chatMessage/send`,
+        `https://printrest-clone-api.onrender.com/api/chatMessage/send`,
         newMessage,
         {
           headers: {
@@ -172,7 +172,7 @@ const ChatMessageBox = () => {
 
 
       // set real time chet messages using socket io.
-      const socket = io("wss://pintrest-clone-api.vercel.app", {
+      const socket = io("https://printrest-clone-api.onrender.com", {
         transports: ["websocket"], // Ensure WebSocket transport is used
         path: "/socket.io/",  
         reconnectionAttempts: 5,
@@ -217,7 +217,7 @@ const ChatMessageBox = () => {
      // Mark the message as read
      const readchats = async () =>{
      try {
-      await axios.put(`https://pintrest-clone-api.vercel.app/api/chatMessage/readchat/${from}/${to}`,{
+      await axios.put(`https://printrest-clone-api.onrender.com/api/chatMessage/readchat/${from}/${to}`,{
       },{
         headers:{
           "Authorization":`Bearer ${accessToken}`

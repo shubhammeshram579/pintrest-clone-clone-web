@@ -27,7 +27,7 @@ const NewMessage = () => {
     const fatchcurrentUser = async () => {
       try {
         
-        const getcurrentUser = await axios.get(`https://pintrest-clone-api.vercel.app/api/users/current-user`,{
+        const getcurrentUser = await axios.get(`https://printrest-clone-api.onrender.com/api/users/current-user`,{
           headers:{
             "Authorization":`Bearer ${accessToken}`,
           }
@@ -52,7 +52,7 @@ const NewMessage = () => {
     if (query) {
       try {
         const getUsers = await axios.get(
-          `https://pintrest-clone-api.vercel.app/api/users/getAllUsers/search`,
+          `https://printrest-clone-api.onrender.com/api/users/getAllUsers/search`,
           {
             params: { query },
             headers: {
@@ -82,7 +82,7 @@ const NewMessage = () => {
   const handleSendMessage = async () => {
     if (selectedUser && message.trim()) {
       try {
-          await axios.post(`https://pintrest-clone-api.vercel.app/api/chatMessage/send`, {
+          await axios.post(`https://printrest-clone-api.onrender.com/api/chatMessage/send`, {
           from: currentUser._id,
           to: selectedUser._id,
           message: message.trim(),

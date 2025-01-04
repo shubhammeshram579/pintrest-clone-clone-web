@@ -27,7 +27,7 @@ function UserLogin() {
   const onSubmit = async (data) => {
     try {
       const session = await axios.post(
-        "https://pintrest-clone-api.vercel.app/api/users/login",
+        "https://printrest-clone-api.onrender.com/api/users/login",
         data,
       );
 

@@ -55,7 +55,7 @@ const GetPostOtherUser = () => {
     const fatchgetpost = async () => {
       try {
         const response = await axios.get(
-          `https://pintrest-clone-api.vercel.app/api/posts/getPostByID/${postId}`,
+          `https://printrest-clone-api.onrender.com/api/posts/getPostByID/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -81,7 +81,7 @@ const GetPostOtherUser = () => {
     const fatchCurrentUser = async () => {
       try {
         const currentUser = await axios.get(
-          "https://pintrest-clone-api.vercel.app/api/users/current-user",
+          "https://printrest-clone-api.onrender.com/api/users/current-user",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -103,7 +103,7 @@ const GetPostOtherUser = () => {
     const fatchgetComment = async () => {
       try {
         const resComment = await axios.get(
-          `https://pintrest-clone-api.vercel.app/api/comments/getcomment/${postId}`,
+          `https://printrest-clone-api.onrender.com/api/comments/getcomment/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -133,7 +133,7 @@ const GetPostOtherUser = () => {
   const onSubmit = async (data) => {
     try {
       const addcomment = await axios.post(
-        `https://pintrest-clone-api.vercel.app/api/comments/addcomment/${postId}`,
+        `https://printrest-clone-api.onrender.com/api/comments/addcomment/${postId}`,
         data,
         {
           headers: {
@@ -164,7 +164,7 @@ const GetPostOtherUser = () => {
   const handleDelete = async () => {
     try {
       await axios.delete(
-        `https://pintrest-clone-api.vercel.app/api/posts/deletePost/${postId}`,
+        `https://printrest-clone-api.onrender.com/api/posts/deletePost/${postId}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,

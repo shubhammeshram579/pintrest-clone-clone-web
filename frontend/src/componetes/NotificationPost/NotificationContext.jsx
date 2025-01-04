@@ -20,7 +20,7 @@ export const NotificationProvider = ({ children }) => {
 
     if(authStatus){
 
-    const socket = io("wss://pintrest-clone-api.vercel.app", {
+    const socket = io("https://printrest-clone-api.onrender.com", {
       transports: ["websocket"], // Ensure WebSocket transport is used
       path: "/socket.io/",  
       reconnectionAttempts: 5,
@@ -39,7 +39,7 @@ export const NotificationProvider = ({ children }) => {
     const fetchNotifications = async () => {
       try {
         const response = await axios.get(
-          "https://pintrest-clone-api.vercel.app/api/Notification",
+          "https://printrest-clone-api.onrender.com/api/Notification",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -81,7 +81,7 @@ export const NotificationProvider = ({ children }) => {
 
     try {
       await axios.delete(
-        `https://pintrest-clone-api.vercel.app/api/Notification/${notificationId}`,
+        `https://printrest-clone-api.onrender.com/api/Notification/${notificationId}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -89,7 +89,7 @@ export const NotificationProvider = ({ children }) => {
         }
       );
 
-      const socket = io("wss://pintrest-clone-api.vercel.app", {
+      const socket = io("https://printrest-clone-api.onrender.com", {
         transports: ["websocket"], // Ensure WebSocket transport is used
         path: "/socket.io/",  
         reconnectionAttempts: 5,

@@ -35,7 +35,7 @@ const  PostForm = ({post}) => {
 
     // fatch addpost api
 try {
-      const response = await axios.post(`https://pintrest-clone-api.vercel.app/api/posts/addpost`,formData,{
+      const response = await axios.post(`https://printrest-clone-api.onrender.com/api/posts/addpost`,formData,{
         headers:{"Authorization":`Bearer ${accessToken}`}
       })
       console.log("cloudernry data",response.data)

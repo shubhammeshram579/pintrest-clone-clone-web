@@ -36,7 +36,7 @@ const HomePosts = () => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          "https://pintrest-clone-api.vercel.app/api/posts/getAllpost",
+          "https://printrest-clone-api.onrender.com/api/posts/getAllpost",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

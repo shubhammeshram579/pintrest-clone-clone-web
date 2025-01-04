@@ -41,7 +41,7 @@ const UpdateUser = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const respornse = await axios.get("https://pintrest-clone-api.vercel.app/api/users/current-user", {
+        const respornse = await axios.get("https://printrest-clone-api.onrender.com/api/users/current-user", {
           headers: {
             "Authorization": `Bearer ${accessToken}`,
           },
@@ -77,7 +77,7 @@ const UpdateUser = () => {
     try {
 
       // fatch  update user details 
-      const res = await axios.patch("https://pintrest-clone-api.vercel.app/api/users/updateuser", formData, {
+      const res = await axios.patch("https://printrest-clone-api.onrender.com/api/users/updateuser", formData, {
         headers: {
             "Authorization": `Bearer ${accessToken}`,
             "Content-Type": "multipart/form-data",

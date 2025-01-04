@@ -15,7 +15,7 @@ const OptionsCard = ({ onDownload, onHide, visible, postId }) => {
     const fatchgetpost = async () => {
       try {
         const response = await axios.get(
-          `https://pintrest-clone-api.vercel.app/api/posts/getPostByID/${postId}`,
+          `https://printrest-clone-api.onrender.com/api/posts/getPostByID/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
