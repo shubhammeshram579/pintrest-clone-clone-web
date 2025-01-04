@@ -264,9 +264,12 @@ const ChatMessageBox = () => {
   };
 
   // heandling error   
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="min-h-[100vh]">Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
+  if (!currentUser.fullname) {
+    return <div className="min-h-[100vh]">Loading...</div>;
+  }
 
 
 

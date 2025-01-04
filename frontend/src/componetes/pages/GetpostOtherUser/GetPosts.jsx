@@ -144,10 +144,10 @@ const GetPostsByotherUser = () => {
     }
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="min-h-[100vh]">Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   if (!post || !post.owner || !post.owner.fullname || !currentUser.fullname) {
-    return <div>Loading...</div>;
+    return <div className="min-h-[100vh]">Loading...</div>;
   }
 
   //post image hide

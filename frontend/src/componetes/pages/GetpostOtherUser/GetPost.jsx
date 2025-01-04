@@ -179,12 +179,12 @@ const GetPostOtherUser = () => {
 
 
    // if error then page loading 
-   if (loading) return <div>Loading...</div>;
+   if (loading) return <div className="min-h-[100vh]">Loading...</div>;
    if (error) return <div>Error: {error}</div>;
  
    // if user details error then heandling error
    if (!post || !post.owner || !post.owner.fullname || !currentUser.fullname) {
-     return <div>Loading...</div>;
+     return <div className="min-h-[100vh]">Loading...</div>;
    }
 
  

@@ -57,10 +57,10 @@ const GetPotsByUserProfile = () => {
 
   const postUrl = window.location.href;
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="min-h-[100vh]">Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   if (!getUser || !getUser.fullname){
-    return <div>Loading...</div>;
+    return <div className="min-h-[100vh]">Loading...</div>;
   } 
 
   const handleSectionChange = (section) => {
