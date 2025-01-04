@@ -67,7 +67,7 @@ const OwnerPost = () => {
     if (scrollInstance.current) {
       setTimeout(() => {
         scrollInstance.current.update();
-      }, 100); // Add a slight delay to ensure content has rendered
+      }, 200); // Add a slight delay to ensure content has rendered
     }
   };
 

@@ -43,7 +43,7 @@ const SavePosts = () => {
   
     },[]);
 
-    if (loading) return <div className='min-h-[100vh]'>Loading...</div>;
+    if (loading) return <div className='py-[90vh]'>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
     
   return (

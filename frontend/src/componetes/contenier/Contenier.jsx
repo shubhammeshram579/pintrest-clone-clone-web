@@ -15,7 +15,7 @@ function Contenier({ children }) {
     // Delay the visibility state change to trigger smooth transition
     setTimeout(() => {
       setVisible(true);
-    }, 300); // Delay for smooth transition
+    }, 500); // Delay for smooth transition
   }, []);
 
 
@@ -34,11 +34,11 @@ function Contenier({ children }) {
       el: scrollRef.current,
       smooth: true,
       smoothMobile: true, // Enable smooth scrolling on mobile
-      inertia: 1.5, // Inertia-based smooth scrolling
+      inertia: 1, // Inertia-based smooth scrolling
       getDirection: true, // Track scroll direction (useful for triggering effects)
       getSpeed: true, // Track scroll speed
       reloadOnContextChange: true, // Reload on content changes
-      multiplier: 1.5,
+      multiplier: 1,
       touchMultiplier:2,
     });
 
