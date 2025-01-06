@@ -1,7 +1,7 @@
 import dotenv from "dotenv"
 import cors from "cors"
 import express from "express"
-// import app from "./App.js"
+import app from "./App.js"
 import {ChatMessage} from "./models/ChatMessage.model.js"
 import { User } from "./models/User.model.js"
 
@@ -12,7 +12,7 @@ import { Server } from 'socket.io';
 
 
 
-const app = express();
+// const app = express();
 
 // app.use(cors());
 dotenv.config()
@@ -31,15 +31,6 @@ const io = new Server(httpServer, {
       methods: ["GET", "POST","PUT"],
     },
 });
-
-
-// const io = new Server(app,{
-//   cors: {
-//       origin: "https://pintrest-clone-frontend.vercel.app", // Replace with your frontend origin
-//       methods: ["GET", "POST"],
-//       credentials: true,
-//   },
-// });
 
 
 
@@ -166,13 +157,8 @@ io.on('connection', (socket) => {
 //     console.error('Server initialization failed. Check your setup.');
 // }
 
-// const PORT = process.env.IOPORT || 5000;
-// httpServer.listen(PORT, () => console.log(`Server socked io running on port 3000`));
-
-
-httpServer.listen(5000, () => {
-  console.log("Server running on port 3000");
-});
+const PORT = process.env.IOPORT || 5000;
+httpServer.listen(PORT, () => console.log(`Server socked io running on port 3000`));
 
 export default io
 
