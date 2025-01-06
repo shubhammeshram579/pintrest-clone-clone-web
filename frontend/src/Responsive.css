@@ -124,16 +124,16 @@
 
 
     #postCard{
-        height: 60vw;
-        width: 42vw;
+        height: 70vw;
+        width: 43vw;
         margin-bottom: 2px;
         /* background-color: red; */
 
     }
 
     #postCard img{
-        height: 55vw;
-        width: 42vw;
+        height: 66vw;
+        width: 43vw;
 
     }
 
@@ -511,6 +511,15 @@
         height: 70vh;
         margin-right: 60%;
 
+      }
+
+      #shareIcone{
+        height: 2vw;
+        width: 2vw;
+      }
+
+      #ShareText{
+        font-size: 2vw;
       }
 
 
