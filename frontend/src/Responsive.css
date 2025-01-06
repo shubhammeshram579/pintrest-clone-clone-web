@@ -419,7 +419,7 @@
         /* background-color: red; */
         width: 85vw;
         height: 70vh;
-        margin-right: 38vw;
+        margin-right: 50vw;
         /* left: 25%; */
     }
 
@@ -445,10 +445,10 @@
     #sendmessageCard{
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content:space-between;
         /* background-color: rebeccapurple; */
         flex-direction: row;
-        margin-top: -20vh;
+        margin-top: -17vh;
         width:70vw;
     }
 
@@ -464,8 +464,8 @@
     #chatBox{
         /* background-color: red; */
         width: 85vw;
-        height: 75vh;
-        margin-right: 38vw;
+        height: 70vh;
+        margin-right: 50vw;
         /* left: 25%; */
 
     }
