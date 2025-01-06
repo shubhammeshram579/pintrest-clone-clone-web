@@ -45,7 +45,7 @@ const ShareProfile = ({ postTitle }) => {
 
 
   return (
-    <div className="w-[22vw] h-[85vh] bg-gray-200 rounded-xl fixed z-50 mt-28 ml-[73%]">
+    <div id="sharePage" className="w-[22vw] h-[85vh] bg-gray-200 rounded-xl fixed z-50 mt-28 ml-[73%]">
       <div className="flex items-center justify-between pr-5 pt-5 font-semibold text-2xl">
         <h1></h1>
         <Link to="/"><h1>Inbox</h1></Link>
