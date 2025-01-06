@@ -125,7 +125,7 @@
 
     #postCard{
         height: 70vw;
-        width: 45vw;
+        width: 43vw;
         margin-bottom: 2px;
         /* background-color: red; */
 
@@ -133,7 +133,7 @@
 
     #postCard img{
         height: 66vw;
-        width: 45vw;
+        width: 43vw;
 
     }
 
@@ -510,22 +510,27 @@
         width: 80vw;
         height: 70vh;
         margin-right: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        overflow-x: scroll;
 
       }
 
       #sharePageCard1{
-        font-size: 3vw;
-        height: 5vh;
+        font-size: 8vw;
+        height: 8vh;
       }
 
       #shareIcone{
-        height: 2vw;
-        width: 2vw;
-        background-color: red;
+        height: 8vw;
+        width: 8vw;
       }
 
       #ShareText{
-        font-size: 2vw;
+        font-size: 5vw;
       }
 
 
