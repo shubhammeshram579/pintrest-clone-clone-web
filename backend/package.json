@@ -8,8 +8,8 @@
   },
   "type": "module",
   "scripts": {
-    "start": "node App.js",
-    "start2": "nodemon -r dotenv/config --experimental-json-modules App.js"
+    "start": "node index.js",
+    "start2": "nodemon -r dotenv/config --experimental-json-modules index.js"
   },
   "keywords": [],
   "author": "",
