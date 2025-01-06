@@ -342,8 +342,8 @@
 
     /* notificarion page */
     #Notification{
-        left: 30%;
-        width: 80vw;
+        left: 20%;
+        width: 90vw;
         height: 73vh;
 
     }
@@ -363,15 +363,15 @@
 
 
     #masseagebox{
-        /* background-color: red; */
-        width: 80vw;
+        background-color: red;
+        width: 90vw;
         height: 75vh;
         margin-right: 30vw;
     }
 
     #masseageboxcard{
-        /* background-color: green; */
-        width: 56vw;
+        background-color: green;
+        width: 85vw;
         height: 68vh;
         border-radius:10px;
         
