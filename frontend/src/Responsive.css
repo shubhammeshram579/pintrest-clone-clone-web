@@ -125,7 +125,7 @@
 
     #postCard{
         height: 70vw;
-        width: 43vw;
+        width: 45vw;
         margin-bottom: 2px;
         /* background-color: red; */
 
@@ -133,7 +133,7 @@
 
     #postCard img{
         height: 66vw;
-        width: 43vw;
+        width: 45vw;
 
     }
 
@@ -513,9 +513,15 @@
 
       }
 
+      #sharePageCard1{
+        font-size: 3vw;
+        height: 5vh;
+      }
+
       #shareIcone{
         height: 2vw;
         width: 2vw;
+        background-color: red;
       }
 
       #ShareText{

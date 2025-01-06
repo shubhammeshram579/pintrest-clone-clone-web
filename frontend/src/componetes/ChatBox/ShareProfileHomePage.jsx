@@ -12,6 +12,7 @@ import {
 
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import "..//../Responsive.css"
 
 
 
@@ -79,24 +80,24 @@ const ShareProfile = ({ postTitle }) => {
         </ol>
       </div>
       <div>
-        <div className="flex justify-center items-center gap-20 flex-wrap mt-10">
+        <div id="sharePageCard1" className="flex justify-center items-center gap-20 flex-wrap mt-10">
           <div className="flex items-center justify-center flex-col gap-1">
             <FacebookShareButton url={postUrl2} quote={postTitle}>
-              <FacebookIcon size={60} round/>
+              <FacebookIcon id="shareIcone" size={60} round/>
             </FacebookShareButton>
-            <h1>Facebook</h1>
+            <h1 id="ShareText">Facebook</h1>
           </div>
           <div className="flex items-center justify-center flex-col gap-1">
             <WhatsappShareButton url={postUrl2} title={postTitle}>
-              <WhatsappIcon size={60} round />
+              <WhatsappIcon id="shareIcone" size={60} round />
             </WhatsappShareButton>
-            <h1>Whatsapp</h1>
+            <h1 id="ShareText">Whatsapp</h1>
           </div>
           <div className="flex items-center justify-center flex-col gap-1">
-            <TwitterShareButton url={postUrl2} title={postTitle}>
-              <TwitterIcon size={60} round />
+            <TwitterShareButton  url={postUrl2} title={postTitle}>
+              <TwitterIcon  id="shareIcone" size={60} round />
             </TwitterShareButton>
-            <h1>X</h1>
+            <h1 id="ShareText">X</h1>
           </div>
           <div className="flex items-center justify-center flex-col gap-1">
             <a
@@ -105,15 +106,15 @@ const ShareProfile = ({ postTitle }) => {
               )}&body=${encodeURIComponent(emailBody)}`}
               className="text-xl"
             >
-             <i class="fa-solid fa-envelope text-2xl bg-red-500 py-3 px-4 rounded-full"></i>
+             <i class="fa-solid fa-envelope text-2xl bg-red-500 py-3 px-4 rounded-full" id="shareIcone"></i>
             </a>
             Email
           </div>
           <div className="flex items-center justify-center flex-col gap-1">
           <button onClick={copyToClipboard} className="text-xl">
-          <i class="fa-solid fa-copy text-2xl  bg-gray-300 py-3 px-4 rounded-full"></i>
+          <i class="fa-solid fa-copy text-2xl  bg-gray-300 py-3 px-4 rounded-full" id="shareIcone"></i>
           </button>
-          <h1 className="flex flex-row">Copy Link</h1>
+          <h1 className="flex flex-row" id="shareIcone">Copy Link</h1>
           </div>
         </div>
       </div>
