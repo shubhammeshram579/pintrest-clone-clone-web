@@ -56,17 +56,17 @@
 
     /* navbar */
     #navhead{
-        /* background-color:yellow; */
+        background-color:yellow;
         height: 100px;
         display: flex;
         align-items: center;
         justify-content:center;
-        /* padding-left: 100px; */
+        /* padding-right: 20px; */
 
     }
 
     #navhead #navitem{
-        /* background-color: red; */
+        background-color: red;
         display: flex;
         align-items: center;
         justify-content:space-between;
@@ -94,7 +94,7 @@
     }
 
     #navList{
-        /* background-color: red; */
+        background-color: red;
         margin-left: 5vw;
     }
 
@@ -122,15 +122,15 @@
 
 
     #postCard{
-        height: 45vh;
+        height: 45vw;
         width: 42vw;
         margin-bottom: 2px;
-        /* background-color: red; */
+        background-color: red;
 
     }
 
     #postCard img{
-        height: 40vh;
+        height: 40vw;
         width: 42vw;
 
     }
