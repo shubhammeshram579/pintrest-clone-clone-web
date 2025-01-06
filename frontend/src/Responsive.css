@@ -344,7 +344,7 @@
     #Notification{
         left: 25%;
         width: 85vw;
-        height: 73vh;
+        height: 70vh;
 
     }
 
@@ -365,8 +365,9 @@
     #masseagebox{
         /* background-color: red; */
         width: 85vw;
-        height: 75vh;
-        margin-right: 30vw;
+        height: 70vh;
+        left: 25%;
+        /* margin-right: 30vw; */
     }
 
     #masseageboxcard{
@@ -417,19 +418,20 @@
     #SendMassagepage{
         /* background-color: red; */
         width: 85vw;
-        height: 76vh;
-        margin-right: 220px;
+        height: 70vh;
+        /* margin-right: 220px; */
+        left: 25%;
     }
 
     #SendMassagepageItem{
-        width: 80vw;
+        width: 50vw;
         /* background-color: green; */
 
     }
 
 
     #SendMassagepageItem #SearchUser{
-        width: 80vw;
+        width: 50vw;
 
     }
 
@@ -439,7 +441,7 @@
         justify-content: center;
         /* background-color: rebeccapurple; */
         margin-top: -12vh;
-        width: 80vw;
+        width: 50vw;
     }
 
     #SendMessagesInput{
@@ -454,8 +456,9 @@
     #chatBox{
         /* background-color: red; */
         width: 85vw;
-        height: 76vh;
-        margin-right: 210px;
+        height: 70vh;
+        /* margin-right: 210px; */
+        left: 25%;
 
     }
 
@@ -470,9 +473,9 @@
         /* background-color: blue; */
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         gap: 2px;
-        width: 60vw;
+        width: 76vw;
 
     }
 
