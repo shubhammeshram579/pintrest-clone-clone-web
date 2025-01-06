@@ -157,8 +157,8 @@ io.on('connection', (socket) => {
 //     console.error('Server initialization failed. Check your setup.');
 // }
 
-const PORT = process.env.IOPORT || 5000;
-httpServer.listen(PORT, () => console.log(`Server socked io running on port 3000`));
+const PORT = process.env.PORT || 5000;
+httpServer.listen(PORT, () => console.log(`Server socked io running on port ${PORT}`));
 
 export default io
 
