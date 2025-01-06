@@ -127,7 +127,7 @@ const NewMessage = () => {
         {/* seearch users */}
         <div className="mt-10">
           <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form id="SearchInpute" onSubmit={handleSubmit(onSubmit)}>
               <i class="fa-solid fa-magnifying-glass bg-green-300 h-12 pt-4 pl-3 rounded-s-lg"></i>
               <input
                 type="text"

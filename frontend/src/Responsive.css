@@ -419,7 +419,7 @@
         /* background-color: red; */
         width: 85vw;
         height: 70vh;
-        margin-right: 32vw;
+        margin-right: 38vw;
         /* left: 25%; */
     }
 
@@ -435,13 +435,21 @@
 
     }
 
+    #SearchInpute{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
+
     #sendmessageCard{
         display: flex;
         align-items: center;
         justify-content: center;
         /* background-color: rebeccapurple; */
-        margin-top: -12vh;
-        width: 50vw;
+        flex-direction: row;
+        margin-top: -20vh;
+        width:70vw;
     }
 
     #SendMessagesInput{
@@ -456,8 +464,8 @@
     #chatBox{
         /* background-color: red; */
         width: 85vw;
-        height: 70vh;
-        margin-right: 32vw;
+        height: 75vh;
+        margin-right: 38vw;
         /* left: 25%; */
 
     }
@@ -466,7 +474,7 @@
         /* background-color: green; */
         font-size: 2.3vw;
         /* overflow-y: auto; */
-        height: 54vh;
+        height: 46vh;
     }
 
     #chatFoter{
