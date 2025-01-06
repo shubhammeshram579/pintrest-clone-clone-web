@@ -510,18 +510,19 @@
         width: 80vw;
         height: 70vh;
         margin-right: 60%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        overflow-x: scroll;
+        
 
       }
 
       #sharePageCard1{
         font-size: 8vw;
         height: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        overflow-x: scroll;
       }
 
       #shareIcone{

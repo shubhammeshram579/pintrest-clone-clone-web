@@ -100,7 +100,7 @@ const ShareProfile = ({ postTitle }) => {
             <h1 id="ShareText">X</h1>
           </div>
           <div className="flex items-center justify-center flex-col gap-1">
-            <a
+            <a id="ShareText"
               href={`mailto:?subject=${encodeURIComponent(
                 emailSubject
               )}&body=${encodeURIComponent(emailBody)}`}
