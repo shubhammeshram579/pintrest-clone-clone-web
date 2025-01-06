@@ -48,7 +48,7 @@ console.log(notifications);
         <div id='notificationCard3' className='h-full w-full bg-gray-300 rounded-lg pb-2 mr-1' onClick={() => {handleNotificationClick(n._id, n.postId._id ,navigate); noficationpagehid();}}>
          <h1 className='font-bold ml-2'>New</h1>
         <div className='flex items-center justify-evenly mb-2 gap-4'>
-            <img src={n.postId.postImg} alt={n.postId.title} className='h-20 w-28 rounded-lg ml-2'/>
+            <img src={n.postId.postImg} alt={n.postId.title} className='h-16 w-24 rounded-lg ml-2'/>
             <h1>{n.postId.description}</h1>
             <p>{n.createdAt.substring(0,10)}</p>
         </div>
