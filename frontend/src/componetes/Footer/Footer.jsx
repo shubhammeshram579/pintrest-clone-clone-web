@@ -20,7 +20,7 @@ function Footer() {
             {!authStatus ? (<div   className="relative z-10 mx-auto max-w-7xl px-4">
                 <div id='footeritem' className="-m-6 flex items-center justify-center">
                     <div className="w-full p-6 md:w-1/2 lg:w-5/12">
-                        <div className="flex h-full flex-col justify-between">
+                        <div id='NewStyleFooter' className="flex h-full flex-col justify-between">
                             <div className="mb-4 inline-flex items-center">
                                 <Logo width="100px" />
                             </div>
@@ -31,7 +31,7 @@ function Footer() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full p-6 md:w-1/2 lg:w-2/12">
+                    <div id='HideFooter' className="w-full p-6 md:w-1/2 lg:w-2/12">
                         <div className="h-full">
                             <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
                                 Company
@@ -72,7 +72,7 @@ function Footer() {
                             </ul>
                         </div>
                     </div>
-                    <div className="w-full p-6 md:w-1/2 lg:w-2/12">
+                    <div id='HideFooter' className="w-full p-6 md:w-1/2 lg:w-2/12">
                         <div className="h-full">
                             <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
                                 Support
@@ -113,7 +113,7 @@ function Footer() {
                             </ul>
                         </div>
                     </div>
-                    <div className="w-full p-6 md:w-1/2 lg:w-3/12">
+                    <div id='HideFooter' className="w-full p-6 md:w-1/2 lg:w-3/12">
                         <div className="h-full">
                             <h3 className="tracking-px pb-12 text-xs font-semibold uppercase text-gray-500">
                                 Legals
@@ -152,7 +152,7 @@ function Footer() {
                 <div id='footer' className="relative z-10 mx-auto max-w-7xl px-4">
                 <div className="-m-6 flex flex-wrap">
                     <div className="w-full p-6 md:w-1/2 lg:w-5/12">
-                        <div className="flex h-full flex-col justify-between">
+                        <div id='NewStyleFooter' className="flex h-full flex-col justify-between">
                             <div className="mb-4 inline-flex items-center">
                                 <Logo width="100px" />
                             </div>
@@ -163,7 +163,7 @@ function Footer() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full p-6 md:w-1/2 lg:w-2/12">
+                    <div id='HideFooter' className="w-full p-6 md:w-1/2 lg:w-2/12">
                         <div className="h-full">
                             <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
                                 Company
@@ -204,7 +204,7 @@ function Footer() {
                             </ul>
                         </div>
                     </div>
-                    <div className="w-full p-6 md:w-1/2 lg:w-2/12">
+                    <div id='HideFooter' className="w-full p-6 md:w-1/2 lg:w-2/12">
                         <div className="h-full">
                             <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
                                 Support
@@ -245,7 +245,7 @@ function Footer() {
                             </ul>
                         </div>
                     </div>
-                    <div className="w-full p-6 md:w-1/2 lg:w-3/12">
+                    <div id='HideFooter' className="w-full p-6 md:w-1/2 lg:w-3/12">
                         <div className="h-full">
                             <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
                                 Legals

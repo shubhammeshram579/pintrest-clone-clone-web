@@ -173,7 +173,7 @@
 
 
     #shrePost{
-      margin-left: 4vw;
+      margin-left: 3vw;
     }
 
     #treedot{
@@ -872,5 +872,45 @@
         
 
       }
+
+      /* additional responsive change */
+      #LoginPage{
+        /* background-color: rebeccapurple; */
+        padding: 5vw;
+      }
+      #HideFooter{
+        display: none;
+      }
+
+      #NewStyleFooter{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        /* background-color: red; */
+      }
+
+      #OptionCard{
+        margin-top: 35px;
+        margin-left: -240px;
+        
+      }
+
+      #DownloadImg{
+        font-size: 2.5vw;
+      }
+
+      #SharePostCard{
+        height: 100px;
+        margin-top: 30px;
+        margin-left: -130px;
+        padding: 2px 5px;
+        font-size: 1px;
+      }
+
+      #CopyLink{
+        font-size: 2.5vw;
+      }
+
 }
 

@@ -7,6 +7,7 @@ import {
   TwitterShareButton,
   TwitterIcon,
 } from "react-share";
+import "../Responsive.css"
 
 const SharePost = ({ postUrl, postTitle }) => {
   const [visible, setVisible] = useState(false);
@@ -31,7 +32,7 @@ const SharePost = ({ postUrl, postTitle }) => {
         }`}
       >
         {/* copy to post url for share the link */}
-        <div className="bg-white rounded-lg px-2 mt-2 p-10 text-black">
+        <div id="SharePostCard" className="bg-white rounded-lg px-2 mt-2 p-10 text-black">
           <h3 className="text-xl text-center mb-5">Share</h3>
           <div className="flex justify-center items-center gap-10">
             <FacebookShareButton url={postUrl} quote={postTitle}>
@@ -43,7 +44,7 @@ const SharePost = ({ postUrl, postTitle }) => {
             <TwitterShareButton url={postUrl} title={postTitle}>
               <TwitterIcon size={32} round />
             </TwitterShareButton>
-            <button onClick={copyToClipboard} className="text-xl text-black">
+            <button id="CopyLink" onClick={copyToClipboard} className="text-xl text-black">
               Copy Link
             </button>
           </div>
