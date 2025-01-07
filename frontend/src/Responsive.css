@@ -874,6 +874,11 @@
       }
 
       /* additional responsive change */
+      #LogPage{
+        padding-top: 65px;
+        padding-bottom: 100px;
+      }
+
       #LoginPage{
         /* background-color: rebeccapurple; */
         padding: 5vw;
@@ -900,11 +905,11 @@
         font-size: 2.5vw;
       }
 
-      #SharePostCard{
-        height: 100px;
+     #SharePostCard{
+        height: 120px;
         margin-top: 30px;
         margin-left: -130px;
-        padding: 2px 5px;
+        padding: 5px 5px;
         font-size: 1px;
       }
 
