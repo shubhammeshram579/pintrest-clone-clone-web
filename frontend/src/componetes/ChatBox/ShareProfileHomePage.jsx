@@ -99,8 +99,8 @@ const ShareProfile = ({ postTitle }) => {
             </TwitterShareButton>
             <h1 id="ShareText">X</h1>
           </div>
-          <div className="flex items-center justify-center flex-col gap-1">
-            <a id="ShareText"
+          <div id="TextEmail" className="flex items-center justify-center flex-col gap-1">
+            <a
               href={`mailto:?subject=${encodeURIComponent(
                 emailSubject
               )}&body=${encodeURIComponent(emailBody)}`}
