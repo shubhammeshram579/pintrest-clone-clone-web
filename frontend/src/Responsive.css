@@ -575,6 +575,16 @@
         font-size: 2vw;
       }
 
+      #TextEmail{
+        /* background-color: red; */
+        font-size: 2vw;
+      }
+      
+      #CopyUrl{
+        /* background-color: green; */
+        font-size: 2vw;
+      }
+
 
 
 
