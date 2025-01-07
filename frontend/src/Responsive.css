@@ -124,20 +124,16 @@
 
 
     #postCard{
-        min-height: 120vh;
-        width: 100%;
+        height: 70vw;
+        width: 43vw;
         margin-bottom: 2px;
-        background-color: red;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+        /* background-color: red; */
 
     }
 
     #postCard img{
         height: 66vw;
-        width: 100%;
+        width: 43vw;
 
     }
 
@@ -211,6 +207,11 @@
       /* background-color: rebeccapurple; */
     }
 
+
+    /* singlePost */
+    #SinglePostCard{
+      background-color: red;
+    }
 
 
 
@@ -536,19 +537,6 @@
 
       #ShareText{
         font-size: 2vw;
-      }
-
-      .fa-envelope{
-        font-size: 8vw;
-
-      }
-
-      .fa-copy{
-        font-size: 8vw;
-
-      }
-      .CopyLink{
-        font-size: 3vw;
       }
 
 

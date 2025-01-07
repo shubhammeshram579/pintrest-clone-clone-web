@@ -114,7 +114,7 @@ const ShareProfile = ({ postTitle }) => {
           <button onClick={copyToClipboard} className="text-xl">
           <i class="fa-solid fa-copy text-2xl  bg-gray-300 py-3 px-4 rounded-full" id="shareIcone"></i>
           </button>
-          <h1 className="flex flex-row" id="shareIcone">Copy Link</h1>
+          <h1 className="CopyLink flex flex-row" id="CopyText">Copy Link</h1>
           </div>
         </div>
       </div>

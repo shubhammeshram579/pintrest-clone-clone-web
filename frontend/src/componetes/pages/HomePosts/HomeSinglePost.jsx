@@ -244,7 +244,7 @@ const HomeSinglePost = () => {
           </div>
 
           
-          <div id="PostCard" className={`HomePost bg-slate-200 w-[38vw] flex items-center rounded-xl ${visible1 ? 'visible1' : ''}`}>
+          <div id="SinglePostCard" className={`HomePost bg-slate-200 w-[38vw] flex items-center rounded-xl ${visible1 ? 'visible1' : ''}`}>
             <div className="py-5 flex items-start justify-start">
               <div
                 className={`transition-colors duration-500 rounded-lg ${
