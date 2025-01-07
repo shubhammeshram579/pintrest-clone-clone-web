@@ -124,16 +124,20 @@
 
 
     #postCard{
-        height: 70vw;
-        width: 43vw;
+        min-height: 120vh;
+        width: 100%;
         margin-bottom: 2px;
-        /* background-color: red; */
+        background-color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
 
     }
 
     #postCard img{
         height: 66vw;
-        width: 43vw;
+        width: 100%;
 
     }
 
@@ -531,9 +535,21 @@
       }
 
       #ShareText{
-        font-size: 5vw;
+        font-size: 2vw;
       }
 
+      .fa-envelope{
+        font-size: 8vw;
+
+      }
+
+      .fa-copy{
+        font-size: 8vw;
+
+      }
+      .CopyLink{
+        font-size: 3vw;
+      }
 
 
 
