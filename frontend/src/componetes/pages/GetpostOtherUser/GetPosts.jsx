@@ -168,15 +168,15 @@ const GetPostsByotherUser = () => {
         </div>
       </div>
       {/* <Contenier> */}
-      <div id="PostCard" className={`CreatePost bg-slate-200 w-[39vw] flex items-center rounded-xl ${visible1 ? "visible1" : ""}`}>
-        <div className="py-5 flex items-start justify-start">
+      <div id="SinglePostCard" className={`CreatePost bg-slate-200 w-[39vw] flex items-center rounded-xl ${visible1 ? "visible1" : ""}`}>
+        <div id="SinglePost" className="py-5 flex items-start justify-start">
           <div
             className={`transition-colors duration-500 rounded-lg ${
               isHidden ? "bg-gray-200" : ""
             }`}
           >
             {post.postImg && (
-              <img
+              <img id="PostImage"
                 className={`h-[72vh] w-[18vw] rounded-xl object-cover ml-2 ${
                   isHidden ? "opacity-0" : "opacity-100"
                 }`}
