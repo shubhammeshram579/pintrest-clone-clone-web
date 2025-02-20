@@ -14,6 +14,7 @@ function LogoutBtn() {
       try {
 
         localStorage.removeItem("token")
+        sessionStorage.removeItem("token");
 
         dispatch(authLogout())
 
