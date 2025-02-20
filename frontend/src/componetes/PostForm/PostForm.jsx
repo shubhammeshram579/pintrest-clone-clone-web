@@ -15,13 +15,13 @@ const  PostForm = ({post}) => {
   const navigate = useNavigate()
 
     // Get the token from cookies or local storage
-    const localStorageToken = localStorage.getItem("token");
-    const stoken = sessionStorage.getItem("token")
+    // const localStorageToken = localStorage.getItem("token");
+    // const stoken = sessionStorage.getItem("token")
     const accessToken = useSelector((state) => state.auth.user?.accessToken);
-    const token = stoken || localStorageToken || accessToken;
+    // const token = stoken || localStorageToken || accessToken;
 
 
-    console.log("accessToken",accessToken)
+    // console.log("accessToken",accessToken)
 
 
     // form data setup
