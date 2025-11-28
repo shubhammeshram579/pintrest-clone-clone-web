@@ -31,16 +31,16 @@ function UserLogin() {
         data,
       );
 
-      console.log(session.data)
+      //console.log(session.data)
 
       // localStorage token set
-      localStorage.setItem("token", session.data.data.accessToken);
+      // localStorage.setItem("token", session.data.data.accessToken);
 
       // reduct tookit token set
       dispatch(authLogin(session.data.data));
 
       // sessionStorage token set
-      sessionStorage.setItem("token", session.data.data.accessToken);
+      // sessionStorage.setItem("token", session.data.data.accessToken);
 
       // navigate page
       navigate("/");
