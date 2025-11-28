@@ -63,7 +63,7 @@ const ChatMessageBox = () => {
     const fatchcurrentUser = async () => {
       try {
         const getcurrentUser = await axios.get(
-          `https://pintrest-clone-api.vercel.app/api/users/current-user`,
+          `https://printrest-clone-api.onrender.com/api/users/current-user`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -92,7 +92,7 @@ const ChatMessageBox = () => {
     const fatchChats = async () => {
       try {
         const response = await axios.get(
-          `https://pintrest-clone-api.vercel.app/api/chatMessage/${from}/${to}`,
+          `https://printrest-clone-api.onrender.com/api/chatMessage/${from}/${to}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
